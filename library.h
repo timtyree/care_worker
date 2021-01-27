@@ -1,0 +1,6 @@
+#ifndef CARE_WORKER_LIBRARY_H
+#define CARE_WORKER_LIBRARY_H
+
+void hello();
+
+#endif //CARE_WORKER_LIBRARY_H
