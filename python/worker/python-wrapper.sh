@@ -5,14 +5,14 @@ module load python/3.7.0
 tar -xzf worker_env.tar.gz
 python3 -m venv worker_env
 source worker_env/bin/activate
-python3 -m pip install scikit-learn cython scikit-image
+python3 -m pip install scikit-learn cython scikit-image gdown
 #get lib
 git clone https://github.com/timtyree/care_worker.git
 cd care_worker/python/worker
 #compile cython
-cd care_worker/python/worker/lib/measure
+cd lib/measure
 ./setup.sh
-cd ../../../../..
+cd ../.. 
 
 #run sim
 python3 ./return_longest_unwrapped_traj.py $1 $2 $3 $4 $5 $6 $7
