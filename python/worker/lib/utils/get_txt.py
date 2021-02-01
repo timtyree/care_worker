@@ -19,6 +19,8 @@ def download_txt(txt_id,worker_dir):
 	if txt_id==3:
 		os.system('gdown https://drive.google.com/uc?id=14SipoA-gemvfyuA5v9tAUQRP3Firmu8G -O ic/ic1800x1800.npz')#at time, 1210
 	os.chdir(worker_dir)
+	if not os.path.exists('ic'):
+		os.mkdir('ic')
 	txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
 	return txt
 
