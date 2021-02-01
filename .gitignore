@@ -7,9 +7,6 @@
 *.csv
 worker_env/
 python/archived/
-*.pyc
-*.nbc
-*.nbi
 python/worker/lib/measure/build/
 python/worker/lib/measure/archive/
 python/worker/care_worker/
