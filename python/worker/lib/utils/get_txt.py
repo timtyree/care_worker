@@ -10,6 +10,8 @@ from .chunk_array import chunk_array
 def download_txt(txt_id,worker_dir):
 	'''returns the first gdrive download file found in the directory, worker_dir.'''
 	os.chdir(worker_dir)
+	if not os.path.exists('ic'):
+		os.mkdir('ic')
 	if txt_id==0:
 		os.system('gdown https://drive.google.com/uc?id=1OYtQNnp5KnGfKMkskk7GeDQSCe3Mo7Gu -O ic/ic1800x1800.npz')#at time, 1210
 	if txt_id==1:
@@ -19,8 +21,6 @@ def download_txt(txt_id,worker_dir):
 	if txt_id==3:
 		os.system('gdown https://drive.google.com/uc?id=14SipoA-gemvfyuA5v9tAUQRP3Firmu8G -O ic/ic1800x1800.npz')#at time, 1210
 	os.chdir(worker_dir)
-	if not os.path.exists('ic'):
-		os.mkdir('ic')
 	txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
 	return txt
 
