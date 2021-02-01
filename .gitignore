@@ -7,7 +7,6 @@
 *.csv
 worker_env/
 python/archived/
-python/worker/lib/measure/build/
 python/worker/lib/measure/archive/
 python/worker/care_worker/
 python/worker/lib/model/comp_check_LR/table_qu_non
