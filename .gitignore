@@ -17,5 +17,4 @@ python/worker/lib/model/comp_check_LR/table_qu_non
 python/worker/lib/model/comp_check_LR/table_qu
 python/worker/lib/model/comp_check_LR/fort.10
 python/worker/lib/model/comp_check_LR/fort.1
-*.so
 *.dat
