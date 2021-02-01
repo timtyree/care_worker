@@ -9,6 +9,10 @@ python3 -m pip install scikit-learn cython scikit-image
 #get lib
 git clone https://github.com/timtyree/care_worker.git
 cd care_worker/python/worker
+#compile cython
+cd care_worker/python/worker/lib/measure
+./setup.sh
+cd ../../../../..
 
 #run sim
 python3 ./return_longest_unwrapped_traj.py $1 $2 $3 $4 $5 $6 $7
