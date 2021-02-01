@@ -1,3 +1,20 @@
 # Project exclude paths
 /cmake-build-debug/
 *.png
+*.gz
+*.npy
+*.npz
+*.csv
+worker_env/
+python/archived/
+*.pyc
+*.nbc
+*.nbi
+python/worker/lib/measure/build/
+python/worker/lib/measure/archive/
+python/worker/lib/model/comp_check_LR/table_qu_non
+python/worker/lib/model/comp_check_LR/table_qu
+python/worker/lib/model/comp_check_LR/fort.10
+python/worker/lib/model/comp_check_LR/fort.1
+*.so
+*.dat
