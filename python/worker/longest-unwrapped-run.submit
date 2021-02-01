@@ -15,4 +15,4 @@ request_memory = 10 MB
 request_disk = 700 MB
 
 PeriodicRelease = ( (CurrentTime - EnteredCurrentStatus) > $RANDOM_INTEGER(2200, 3200, 200) ) && ((NumJobStarts < 3))
-queue kPDE LPDE c0 T iter_no td time_res from run_1.dat
+queue kPDE LPDE c0 T iter_no td time_res from runs/run_1.dat
