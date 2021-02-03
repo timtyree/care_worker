@@ -29,7 +29,7 @@ def get_one_step_map(nb_dir,dt,dsdpixel,width,height,**kwargs):
 def comp_transient_gating_variable(var, tau, varinfty):
 	return (varinfty - var)/tau
 
-def get_comp_dVcdt(width=200,height=200,diffCoef=0.001,ds=5.,Cm=1.):
+def get_comp_dVcdt(width,height,diffCoef=0.001,ds=5.,Cm=1., **kwargs):
 	'''the square domain has area = dsdpixel**2*width*height
 	dsdpixel=0.025 cm/pixel by default
 	'''

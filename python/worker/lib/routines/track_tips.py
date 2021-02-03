@@ -4,8 +4,8 @@
 import trackpy, pandas as pd, numpy as np
 from .. import *
 from ..utils.dist_func import *
-def compute_track_tips_pbc(df, mem=2, sr=400,
-                       width=200, height=200, adaptive_step=0.5,
+def compute_track_tips_pbc(df, mem, sr,
+                       width, height, adaptive_step=0.5,
                        adaptive_stop=1e-5, **kwargs):
     '''returns a dataframe of trajectories resulting from the positions
     listed in the .csv, input_file_name using period boundary conditions (pbc).
@@ -35,8 +35,8 @@ def compute_track_tips_pbc(df, mem=2, sr=400,
     traj = trackpy.link_df(
         f=df.head(-1),t_column='frame',**link_kwargs)
     return traj
-def generate_track_tips_pbc(input_file_name, save_fn=None, mem=0, sr=400,
-                       width=200, height=200, adaptive_step=0.5,
+def generate_track_tips_pbc(input_file_name, mem, sr,
+                       width, height, adaptive_step=0.5, save_fn=None,
                        adaptive_stop=1e-5, **kwargs):
     '''performs compute_track_tips_pbc and then saves to csv using
     save_fn, which is generated automatically if not given.'''
@@ -45,7 +45,8 @@ def generate_track_tips_pbc(input_file_name, save_fn=None, mem=0, sr=400,
     df = pd.read_csv(input_file_name)
     df.drop_duplicates(subset=['t','x','y'],keep='first',inplace=True)#,ignore_index=True)
     # df.dropduplicate(inplace=True)1
-    traj = compute_track_tips_pbc(df, **kwargs)
+    traj = compute_track_tips_pbc(df, mem, sr,
+                       width, height,**kwargs)
     #save results
     dirname = os.path.dirname(input_file_name).split('/')[-1]
     folder_name=os.path.dirname(input_file_name)

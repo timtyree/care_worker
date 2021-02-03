@@ -65,7 +65,7 @@ def main():
 
     #delete the mother initial condition (as she is >200MB)
     os.chdir(worker_dir)
-    os.remove(os.path.join('ic','ic1800x1800.npz'))
+    # os.remove(os.path.join('ic','ic1800x1800.npz'))
 
     #initialize filesystem if not already initialized
     cwd=os.getcwd()
@@ -162,7 +162,7 @@ def main():
     df.to_csv('out.csv', index=False)
 
     print(f'Inputs were L={L}, txt_id1={txt_id1}, and txt_id2={txt_id2}')
-    print(f"\Outputs of longest unwrapped spiral tip trajectory is:")
+    print(f"Outputs of longest unwrapped spiral tip trajectory is:")
     with open('out.csv') as f:
         for line in f:
             print(line)

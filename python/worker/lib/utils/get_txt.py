@@ -1,5 +1,6 @@
 import os, numpy as np
 from .chunk_array import chunk_array
+from .gdown import *
 #install dependencies
 # os.system('python3 -m pip install --upgrade pip')
 # os.system('python3 -m pip install gdown')
@@ -7,18 +8,28 @@ from .chunk_array import chunk_array
 # os.system('chmod +x get_txt.sh')
 # os.system(f'./get_txt.sh {txt_id}')
 
+def run_downloader(gid):
+	txt_ic_fn='ic/ic1800x1800.npz'
+	destination=txt_ic_fn
+	retval=download_file_from_google_drive(gid, destination)
+	return None
+
 def download_txt(txt_id,worker_dir):
 	'''returns the first gdrive download file found in the directory, worker_dir.'''
 	os.chdir(worker_dir)
 	if not os.path.exists('ic'):
 		os.mkdir('ic')
 	if txt_id==0:
+		# run_downloader(gid='1OYtQNnp5KnGfKMkskk7GeDQSCe3Mo7Gu')
 		os.system('gdown https://drive.google.com/uc?id=1OYtQNnp5KnGfKMkskk7GeDQSCe3Mo7Gu -O ic/ic1800x1800.npz')#at time, 1210
 	if txt_id==1:
+		# run_downloader(gid='1td_6aQHFWzvunt1kU14ViW5DZ69rUhMD')
 		os.system('gdown https://drive.google.com/uc?id=1td_6aQHFWzvunt1kU14ViW5DZ69rUhMD -O ic/ic1800x1800.npz')#at time, 1210
 	if txt_id==2:
+		# run_downloader(gid='12dLQ_YFwSAvuuZc1lhNsKPcv4QXZB86u')
 		os.system('gdown https://drive.google.com/uc?id=12dLQ_YFwSAvuuZc1lhNsKPcv4QXZB86u -O ic/ic1800x1800.npz')#at time, 1210
 	if txt_id==3:
+		# run_downloader(gid='14SipoA-gemvfyuA5v9tAUQRP3Firmu8G')
 		os.system('gdown https://drive.google.com/uc?id=14SipoA-gemvfyuA5v9tAUQRP3Firmu8G -O ic/ic1800x1800.npz')#at time, 1210
 	os.chdir(worker_dir)
 	txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
