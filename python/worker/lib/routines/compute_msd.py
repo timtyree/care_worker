@@ -161,17 +161,41 @@ def unwrap_trajectories(input_file_name, output_file_name, width, height, DS, **
 
 # def compute_emsd_for_longest_trajectories(input_file_name,n_tips = 1,DS = 5/200,DT = 1., round_t_to_n_digits=0):
 def get_longest_trajectories(input_file_name, width, height, n_tips = 1,DS = 5/200,DT = 2., round_t_to_n_digits=0, jump_thresh=20., **kwargs):
-    #select the longest n trajectories
-    df = pd.read_csv(input_file_name)
-    df.reset_index(inplace=True)
-    try:
-        s = df.groupby('particle').t.count()
-    except KeyError as e:#("KeyError") as e:
-        # print(e)
-        print( f"\t trial that failed: {input_file_name.split('/')[-1]}")
-        return None
-    s = s.sort_values(ascending=False)
-    pid_longest_lst = list(s.index.values[:n_tips])
+    if n_tips==1:
+        #select the longest trajectories that moves
+        df = pd.read_csv(input_file_name)
+        df.reset_index(inplace=True)
+        try:
+            s = df.groupby('particle').t.count()
+        except KeyError as e:#("KeyError") as e:
+            # print(e)
+            print( f"\t trial that failed: {input_file_name.split('/')[-1]}")
+            return None
+        s = s.sort_values(ascending=True)
+        pid_longest_lst = list(s.index.values)#[:n_tips])
+        pid=pid_longest_lst.pop()
+        std_diffx=df[(df.particle==pid)].x.diff().dropna().std()
+        boo=False
+        if std_diffx:#.diff().dropna().x.std
+            if std_diffx>0:
+                boo=True
+        while not boo:
+            pid=pid_longest_lst.pop()
+            std_diffx=df[(df.particle==pid)].x.diff().dropna().std()
+            boo=False
+            if std_diffx:#.diff().dropna().x.std
+                if std_diffx>0:
+                    boo=True
+        pid_longest_lst=[pid]
+    else:
+        try:
+            s = df.groupby('particle').t.count()
+        except KeyError as e:#("KeyError") as e:
+            # print(e)
+            print( f"\t trial that failed: {input_file_name.split('/')[-1]}")
+            return None
+        s = s.sort_values(ascending=False)
+        pid_longest_lst = list(s.index.values[:n_tips])
     #     df_traj = pd.concat([df[df.particle==pid] for pid in pid_longest_lst])
 
     #truncate trajectories to their first apparent jump (pbc jumps should have been removed already)

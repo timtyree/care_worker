@@ -19,15 +19,15 @@ def log_to_unwrapped_trajectory(input_file_name, width, height, sr, mem, DS=0.02
         retval_ignore = unwrap_trajectories(traj_fn, output_file_name, width=width, height=height, DS=DS, **kwargs)
     return os.path.abspath(output_file_name)
 
-def main():
+def main(txt_id1):
     #randomly determine which initial condition to use
     width_in=1800
     max_area=width_in**2 #sqpixels
     min_area=300**2 #sqpixels
     L=312#int(np.floor(np.sqrt(random.uniform(min_area,max_area))))#COMMENT_HERE
-    N_txt_id1=4-1#the max index of the main-square
+    # N_txt_id1=4-1#the max index of the main-square
+    # txt_id1=random.randint(0,N_txt_id1)
     N_txt_id2=int(np.floor((width_in-L) / L))**2-1#the max index to the sub-square
-    txt_id1=random.randint(0,N_txt_id1)
     if N_txt_id2>0:
         txt_id2=random.randint(0,N_txt_id2)
     else:
@@ -171,7 +171,7 @@ def main():
 
 if __name__=="__main__":
     # # parse arguments
-	# kPDE = float(sys.argv[1].split(',')[0])
+	txt_id1 = float(sys.argv[1].split(',')[0])
 	# LPDE = float(sys.argv[2].split(',')[0])
 	# c0   = float(sys.argv[3].split(',')[0])
-    main()
+    main(txt_id1)

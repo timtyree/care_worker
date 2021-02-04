@@ -2,7 +2,7 @@ Universe = vanilla
 Requirements = (TARGET.Arch == "X86_64") && (HAS_MODULES =?= True) && (OSGVO_OS_STRING == "RHEL 7")
 
 executable = python-wrapper.sh
-arguments = $(kPDE) $(LPDE) $(c0) $(T) $(iter_no) $(td) $(time_res)
+arguments = $(txt_id1)
 
 transfer_input_files = return_longest_unwrapped_traj.py, worker_env.tar.gz
 
@@ -14,5 +14,5 @@ request_cpus = 1
 request_memory = 10 MB
 request_disk = 700 MB
 
-PeriodicRelease = ( (CurrentTime - EnteredCurrentStatus) > $RANDOM_INTEGER(2200, 3200, 200) ) && ((NumJobStarts < 3))
-queue kPDE LPDE c0 T iter_no td time_res from runs/run_1.dat
+PeriodicRelease = ( (CurrentTime - EnteredCurrentStatus) > $RANDOM_INTEGER(300000, 301000, 200) ) && ((NumJobStarts < 9))
+queue txt_id1 from runs/run_1.dat
