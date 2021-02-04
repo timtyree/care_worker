@@ -14,7 +14,7 @@ def run_downloader(gid):
 	retval=download_file_from_google_drive(gid, destination)
 	return None
 
-def get_gid(txt_in1):
+def get_gid(txt_id):
 	import random
 	def decision(probability):
 	    return random.random() < probability
@@ -45,7 +45,7 @@ def download_txt(txt_id,worker_dir):
 	os.chdir(worker_dir)
 	if not os.path.exists('ic'):
 		os.mkdir('ic')
-	gid=get_gid(txt_in1)
+	gid=get_gid(txt_id)
 	run_downloader(gid=gid)
 	# if txt_id==0:
 	# 	# run_downloader(gid='1OYtQNnp5KnGfKMkskk7GeDQSCe3Mo7Gu')
