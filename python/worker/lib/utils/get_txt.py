@@ -39,7 +39,8 @@ def get_gid(txt_id):
 			gid='14SipoA-gemvfyuA5v9tAUQRP3Firmu8G'
 		else:
 			gid='1vmeI5SyyveaZ00qEeiqb04MVDssw9s5p'
-
+	return gid
+	
 def download_txt(txt_id,worker_dir):
 	'''returns the first gdrive download file found in the directory, worker_dir.'''
 	os.chdir(worker_dir)
@@ -47,6 +48,8 @@ def download_txt(txt_id,worker_dir):
 		os.mkdir('ic')
 	gid=get_gid(txt_id)
 	run_downloader(gid=gid)
+	# cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.npz'
+	# os.system(cmd)#at time, 1210
 	# if txt_id==0:
 	# 	# run_downloader(gid='1OYtQNnp5KnGfKMkskk7GeDQSCe3Mo7Gu')
 	# 	os.system('gdown https://drive.google.com/uc?id=1OYtQNnp5KnGfKMkskk7GeDQSCe3Mo7Gu -O ic/ic1800x1800.npz')#at time, 1210
@@ -58,9 +61,9 @@ def download_txt(txt_id,worker_dir):
 	# 	os.system('gdown https://drive.google.com/uc?id=12dLQ_YFwSAvuuZc1lhNsKPcv4QXZB86u -O ic/ic1800x1800.npz')#at time, 1210
 	# if txt_id==3:
 	# 	# run_downloader(gid='14SipoA-gemvfyuA5v9tAUQRP3Firmu8G')
-	# 	os.system('gdown https://drive.google.com/uc?id=14SipoA-gemvfyuA5v9tAUQRP3Firmu8G -O ic/ic1800x1800.npz')#at time, 1210
 	os.chdir(worker_dir)
 	txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
+	# txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
 	return txt
 
 def get_txt_lst(txt_id1,width,height,worker_dir):
@@ -92,10 +95,11 @@ def load_buffer(data_dir,**kwargs):
 		txt = txt[txt.files[0]]  #only take the first buffer because there's typically one
 		return txt
 	else:
-		print(f"\tWarning: Failed to load {data_dir}.")
-		raise Exception(f"\tWarning: Failed to load {data_dir}.")
+		print(f"Warning: file format not supported {data_dir}.")
+		raise Exception(f"Warning: file format not supported {data_dir}.")
 
 
 if __name__=='__main__':
+	os.get_cwd()
 	for input_fn in sys.argv[1:]:
-		chunk_from_fn(input_fn)
+		download_txt(txt_id,worker_dir)
