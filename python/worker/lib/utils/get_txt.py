@@ -33,24 +33,32 @@ def get_gid(txt_id):
 	#two gid's per texture lowers the load on google drive servers
 	if txt_id==0:#at time, 1210
 		if decision(0.5):
-			gid='15Dw_ZVj1AodyqSQpBdrvggxSBkL5-YIp'
+			gid='1h7MahThMtqLtx4QO0GUFNFKUxyBdCT87'
+			# gid='15Dw_ZVj1AodyqSQpBdrvggxSBkL5-YIp'
 		else:
-			gid='18XXdQXfjMbDKCREmOOG7Pat7eCeGaJm9'
+			gid='19ms4GVcyG43ttMu-pTqEjJk7H3eVVR4m'
+			# gid='18XXdQXfjMbDKCREmOOG7Pat7eCeGaJm9'
 	if txt_id==1:#at time, 2020
 		if decision(0.5):
-			gid='1zyAZab_5U4jD6Xn6OK_kKKSSTh65dHkX'
+			gid='1WE0CECQXEp4eqNTPW4g4U9cqxhcbHsIW'
+			# gid='1zyAZab_5U4jD6Xn6OK_kKKSSTh65dHkX'
 		else:
-			gid='1e5ojFGN2mHN8YJlDvTBHxkVfJPZTZXvq'
+			gid='1AhiZkyr9oZWbYDQHL3hNmJdH-Ac7DWf7'
+			# gid='1e5ojFGN2mHN8YJlDvTBHxkVfJPZTZXvq'
 	if txt_id==2:#at time, 2830
 		if decision(0.5):
-			gid='1cBQ-knunPqiDlshhptUzZlvFV6luR_Aj'
+			gid='1OQvGDsSnzi4ka2dINNfFsGUGldTQ1NvY/'
+			# gid='1cBQ-knunPqiDlshhptUzZlvFV6luR_Aj'
 		else:
-			gid='1-mRKafJypVeopGZxiEZohrMT4o8kcIyp'
+			gid='1Mu8e59rik0OCPVnksoQWydaIvEV4ttGm'
+			# gid='1-mRKafJypVeopGZxiEZohrMT4o8kcIyp'
 	if txt_id==3:#at time, 3640
 		if decision(0.5):
-			gid='1EOMR7izLM0bS4GVXr9daSHo9FtsW56vo'
+			gid='1byRBGIbPRzcjAxE-cr6qW_nHqco4Xrxy'
+			# gid='1EOMR7izLM0bS4GVXr9daSHo9FtsW56vo'
 		else:
-			gid='1Hu-w9vChqRAR4EZSuLqZbG7qh5gFgBbL'
+			gid='1sqAR-EovDn_Bx8vH_5pxWAXrAPz_eADh'
+			# gid='1Hu-w9vChqRAR4EZSuLqZbG7qh5gFgBbL'
 	return gid
 
 def download_txt(txt_id,worker_dir,rm_father_ic=True):

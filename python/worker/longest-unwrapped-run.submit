@@ -11,10 +11,10 @@ error = Log/job.error.$(Cluster).$(Process)
 log = Log/job.log.$(Cluster).$(Process)
 
 request_cpus = 1
-request_memory = 10 MB
+request_memory = 100 MB
 request_disk = 700 MB
 
-next_job_start_delay = ( (CurrentTime - EnteredCurrentStatus) > $RANDOM_INTEGER(60000, 63000, 100) ) && ((JobStatus == 0))
+next_job_start_delay = 60
 
-PeriodicRelease = ( (CurrentTime - EnteredCurrentStatus) > $RANDOM_INTEGER(30000, 33000, 1000) ) && ((NumJobStarts < 4))
+PeriodicRelease = ( (CurrentTime - EnteredCurrentStatus) > $RANDOM_INTEGER(3000, 3300, 100) ) && ((NumJobStarts < 4))
 queue txt_id1 from runs/run_1.dat
