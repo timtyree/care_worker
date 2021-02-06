@@ -9,14 +9,17 @@ $ ssh TimtheTyrant@login05.osgconnect.net
 #enter password (hint:check phone)
 
 
-<!-- copy file using scp to the open science grid -->
+<!-- copy file to the open science grid using scp-->
 $ scp -r worker TimtheTyrant@login05.osgconnect.net:~
+$ scp -r worker-transfer.tar.gz TimtheTyrant@login05.osgconnect.net:~
 <!-- pw hint english cmail -->
-<!-- copy file using scp from the open science grid -->
+<!-- copy file from the open science grid using scp-->
 $ scp TimtheTyrant@login05.osgconnect.net:pde-sim-transfer/pde-sim.submit archive
 
 <!-- copy output from osg  -->
 $ scp -r TimtheTyrant@login05.osgconnect.net:pde-sim-transfer/Log data/osg_output
+
+
 
 <!-- debug an already submitted job -->
 $ condor_q
@@ -44,6 +47,8 @@ jobs finished, execute the `post_script.sh  script to sort the results.
     or 
     ./post_script.sh
 
+then, 
+scp TimtheTyrant@login05.osgconnect.net:worker/Log.tar.gz .
 <!--queue command tricks-->
 <!-- arguments = $(x_low) $(x_high) $(y_low) $(y_high)
 # Queue command  list

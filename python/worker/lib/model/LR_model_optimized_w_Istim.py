@@ -6,18 +6,21 @@
 # implemented on a square computational domain.
 # Uses lookup table instead of using comp_ionic_currents
 from numba import njit, jit, float64#, prange
-import numpy as np
+import numpy as np, pandas as pd
 import os
 from math import log
 
 def get_one_step_map(nb_dir,dt,dsdpixel,width,height,**kwargs):
+	'''Example Usage:
+	dt, one_step_map= get_one_step_map(nb_dir,dt,dsdpixel,width,height,**kwargs):
+'''
 	#make null stimulus
 	ds=dsdpixel*width
-	txt_Istim_none=np.zeros(shape=(width,height,1), dtype=np.float64, order='C')
+	# txt_Istim_none=np.zeros(shape=(width,height,1), dtype=np.float64, order='C')
 	dt, kernelA, kernelB=get_one_step_explicit_synchronous_splitting_w_Istim_kernel(nb_dir,dt,width,height,ds)
 
 	#get one step map
-	txt_Istim=txt_Istim_none.copy()
+	# txt_Istim=txt_Istim_none.copy()
 	@njit
 	def one_step_map(txt,txt_Istim):
 		kernelA(txt,txt_Istim)

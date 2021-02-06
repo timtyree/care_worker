@@ -12,7 +12,7 @@ cd care_worker/python/worker
 #compile cython
 cd lib/measure
 ./setup.sh
-cd ../.. 
+cd ../..
 
 #run sim
 python3 ./return_longest_unwrapped_traj.py $1

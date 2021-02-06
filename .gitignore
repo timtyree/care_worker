@@ -6,6 +6,7 @@
 *.npz
 *.csv
 worker_env/
+*/Log/
 python/archived/
 python/worker/lib/measure/archive/
 python/worker/care_worker/
