@@ -6,18 +6,26 @@ UCSD - Rappel Lab
 
 <!-- #log onto osg connect (which has nice tutorials) -->
 $ ssh TimtheTyrant@login05.osgconnect.net
-#enter password (hint:check phone)
-
+<!-- enter pw (hint:check phone) -->
+<!-- pw hint english cmail -->
 
 <!-- copy file to the open science grid using scp-->
 $ scp -r worker TimtheTyrant@login05.osgconnect.net:~
+
+<!-- pack  -->
+tar czf worker-transfer.tar.gz worker
+
 $ scp -r worker-transfer.tar.gz TimtheTyrant@login05.osgconnect.net:~
-<!-- pw hint english cmail -->
+
+<!-- unpack  -->
+tar -xzf worker-transfer.tar.gz
+
 <!-- copy file from the open science grid using scp-->
-$ scp TimtheTyrant@login05.osgconnect.net:pde-sim-transfer/pde-sim.submit archive
+$ scp TimtheTyrant@login05.osgconnect.net:worker/worker_env.tar.gz .
 
 <!-- copy output from osg  -->
-$ scp -r TimtheTyrant@login05.osgconnect.net:pde-sim-transfer/Log data/osg_output
+$ scp TimtheTyrant@login05.osgconnect.net:worker/Log.tar.gz .
+$ scp -r TimtheTyrant@login05.osgconnect.net:worker/Log data/osg_output
 
 
 
