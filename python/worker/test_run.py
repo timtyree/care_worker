@@ -12,7 +12,7 @@ from lib.routines.return_longest_traj import return_longest_trajectories
 import random
 import os,sys
 
-def run_main(txt_id1):
+def run_main(txt_id1,mode='FK'):
 	#randomly determine which initial condition to use
 	width_in=1800
 	max_area=900**2 #sqpixels
@@ -28,14 +28,19 @@ def run_main(txt_id1):
 		txt_id2=0
 	worker_dir=os.getcwd()#nb_dir#os.path.join(nb_dir,'worker')
 	width=L;height=L;
-	V_threshold=-50
+	if mode=='FK':
+		V_threshold=0.4
+		dt=0.025
+	else:
+		V_threshold=-50
+		dt=0.1
 	# txt_id1=0;txt_id2=8#COMMENT_HERE
 	tmax_sec=30.
 	tmax_sec=.15 #max time to integratein seconds#COMMENT_HERE
 	tmax=tmax_sec * 10**3
 	# K_o=7.#5.4 higher K_o should give shorter APD#
 	dsdpixel=0.025#cm/pixel  # area=width*height*dsdpixel**2
-	dt = 0.1 # milliseconds
+	# dt = 0.1 # milliseconds
 	DT = 2   #ms between spiral tip frames
 	save_every_n_frames=int(DT/dt)
 	tmin=100# milliseconds
@@ -44,7 +49,7 @@ def run_main(txt_id1):
 	n_tips = 1
 	round_t_to_n_digits=0
 	tmin_early_stopping=100
-	jump_thresh=20.
+	jump_thresh=30.
 	# round_output_decimals
 	################################
 	# Setup file system and initial conditions
@@ -88,7 +93,7 @@ def run_main(txt_id1):
 	# 		os.rename('ic-out','ic-in')
 	# 		os.rename('ic-in2','ic-out')
 	# 		# print('ic reset')
-	txt= get_txt(txt_id1,txt_id2,width,height,worker_dir)
+	txt= get_txt(txt_id1,txt_id2,width,height,worker_dir,mode=mode)
 	df=return_tips_from_txt(
 	    txt=txt,
 	    h=dt,
@@ -96,7 +101,7 @@ def run_main(txt_id1):
 	    V_threshold=V_threshold,
 	    dsdpixel=dsdpixel,
 	    tmin_early_stopping=tmin_early_stopping,
-	    save_every_n_frames=save_every_n_frames)
+	    save_every_n_frames=save_every_n_frames,mode='FK')
 	del txt
 
 	# df = return_longest_trajectories(df, width, height, dsdpixel, n_tips = n_tips, DT = DT,
