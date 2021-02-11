@@ -1,0 +1,368 @@
+Compiling /Users/timothytyree/Documents/GitHub/care_worker/python/worker/lib/measure/_find_contours_cy.pyx because it depends on /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/__init__.pxd.
+Compiling /Users/timothytyree/Documents/GitHub/care_worker/python/worker/lib/measure/_find_contours_pbc_cy.pyx because it depends on /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/__init__.pxd.
+Compiling /Users/timothytyree/Documents/GitHub/care_worker/python/worker/lib/measure/_find_tips_pbc_cy.pyx because it depends on /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/__init__.pxd.
+Compiling /Users/timothytyree/Documents/GitHub/care_worker/python/worker/lib/measure/_find_tips_kernel_cy.pyx because it depends on /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/__init__.pxd.
+[1/4] Cythonizing /Users/timothytyree/Documents/GitHub/care_worker/python/worker/lib/measure/_find_contours_cy.pyx
+[4/4] Cythonizing /Users/timothytyree/Documents/GitHub/care_worker/python/worker/lib/measure/_find_tips_pbc_cy.pyx
+[2/4] Cythonizing /Users/timothytyree/Documents/GitHub/care_worker/python/worker/lib/measure/_find_contours_pbc_cy.pyx
+[3/4] Cythonizing /Users/timothytyree/Documents/GitHub/care_worker/python/worker/lib/measure/_find_tips_kernel_cy.pyx
+running build_ext
+running build_src
+build_src
+building extension "measure._find_contours_cy" sources
+building extension "measure._find_contours_pbc_cy" sources
+building extension "measure._find_tips_pbc_cy" sources
+building extension "measure._find_tips_kernel_cy" sources
+build_src: building npy-pkg config files
+customize UnixCCompiler
+customize UnixCCompiler using build_ext
+CCompilerOpt.cc_test_flags[999] : testing flags (-march=native)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+creating /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users
+creating /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree
+creating /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3
+creating /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs
+creating /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs/wenv
+creating /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs/wenv/lib
+creating /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7
+creating /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages
+creating /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy
+creating /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils
+creating /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-march=native'
+CCompilerOpt.cc_test_flags[999] : testing flags (-O3)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-O3'
+CCompilerOpt.cc_test_flags[999] : testing flags (-Werror)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-Werror'
+CCompilerOpt.__init__[1674] : check requested baseline
+CCompilerOpt.cc_test_flags[999] : testing flags (-msse)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse'
+CCompilerOpt.cc_test_flags[999] : testing flags (-msse2)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse2'
+CCompilerOpt.feature_test[1446] : testing feature 'SSE2' with flags (-msse -msse2)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -Werror'
+CCompilerOpt.feature_test[1446] : testing feature 'SSE' with flags (-msse -msse2)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -Werror'
+CCompilerOpt.cc_test_flags[999] : testing flags (-msse3)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse3'
+CCompilerOpt.feature_test[1446] : testing feature 'SSE3' with flags (-msse -msse2 -msse3)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -Werror'
+CCompilerOpt.__init__[1683] : check requested dispatch-able features
+CCompilerOpt.cc_test_flags[999] : testing flags (-mssse3)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mssse3'
+CCompilerOpt.feature_test[1446] : testing feature 'SSSE3' with flags (-msse -msse2 -msse3 -mssse3)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -Werror'
+CCompilerOpt.cc_test_flags[999] : testing flags (-msse4.1)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse4.1'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mpopcnt)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mpopcnt'
+CCompilerOpt.cc_test_flags[999] : testing flags (-msse4.2)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse4.2'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mavx)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mavx'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mf16c)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mf16c'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mfma)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mfma'
+CCompilerOpt.feature_test[1446] : testing feature 'FMA3' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -Werror'
+CCompilerOpt.feature_test[1446] : testing feature 'SSE41' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -Werror'
+CCompilerOpt.feature_test[1446] : testing feature 'SSE42' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -Werror'
+CCompilerOpt.feature_test[1446] : testing feature 'F16C' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -Werror'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mavx2)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mavx2'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mavx512f)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mavx512f'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mavx512cd)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mavx512cd'
+CCompilerOpt.feature_test[1446] : testing feature 'AVX512CD' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -Werror'
+CCompilerOpt.feature_test[1446] : testing feature 'AVX512F' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -Werror'
+CCompilerOpt.feature_test[1446] : testing feature 'POPCNT' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -Werror'
+CCompilerOpt.feature_test[1446] : testing feature 'AVX' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -Werror'
+CCompilerOpt.feature_test[1446] : testing feature 'AVX2' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mavx2)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mavx2 -Werror'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mavx512er -mavx512pf)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mavx512er -mavx512pf'
+CCompilerOpt.feature_test[1446] : testing feature 'AVX512_KNL' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512er -mavx512pf)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512er -mavx512pf -Werror'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mavx512vl -mavx512bw -mavx512dq)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mavx512vl -mavx512bw -mavx512dq'
+CCompilerOpt.feature_test[1446] : testing feature 'AVX512_SKX' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -Werror'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mavx512vnni)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mavx512vnni'
+CCompilerOpt.feature_test[1446] : testing feature 'AVX512_CLX' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512vnni)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512vnni -Werror'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mavx512ifma -mavx512vbmi)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mavx512ifma -mavx512vbmi'
+CCompilerOpt.feature_test[1446] : testing feature 'AVX512_CNL' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512ifma -mavx512vbmi -Werror'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mavx512vbmi2 -mavx512bitalg -mavx512vpopcntdq)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mavx512vbmi2 -mavx512bitalg -mavx512vpopcntdq'
+CCompilerOpt.feature_test[1446] : testing feature 'AVX512_ICL' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512vnni -mavx512ifma -mavx512vbmi -mavx512vbmi2 -mavx512bitalg -mavx512vpopcntdq)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -mavx512vnni -mavx512ifma -mavx512vbmi -mavx512vbmi2 -mavx512bitalg -mavx512vpopcntdq -Werror'
+CCompilerOpt.cc_test_flags[999] : testing flags (-mavx5124fmaps -mavx5124vnniw -mavx512vpopcntdq)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-mavx5124fmaps -mavx5124vnniw -mavx512vpopcntdq'
+CCompilerOpt.dist_test[576] : CCompilerOpt._dist_test_spawn[713] : Command (gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/test_flags.c -o /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/test_flags.o -MMD -MF /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/test_flags.o.d -mavx5124fmaps -mavx5124vnniw -mavx512vpopcntdq) failed with exit status 1 output -> 
+clang: error: unknown argument: '-mavx5124fmaps'
+clang: error: unknown argument: '-mavx5124vnniw'
+
+CCompilerOpt.cc_test_flags[1003] : testing failed
+CCompilerOpt.feature_test[1446] : testing feature 'AVX512_KNM' with flags (-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512er -mavx512pf)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512er -mavx512pf -Werror'
+CCompilerOpt.dist_test[576] : CCompilerOpt._dist_test_spawn[713] : Command (gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/cpu_avx512_knm.c -o /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/cpu_avx512_knm.o -MMD -MF /var/folders/j7/gy4865n970791sw08mq9gynh0000gn/T/tmp4tqykin0/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/cpu_avx512_knm.o.d -msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512er -mavx512pf -Werror) failed with exit status 1 output -> 
+/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/cpu_avx512_knm.c:9:9: error: implicit declaration of function '_mm512_4fmadd_ps' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    b = _mm512_4fmadd_ps(b, b, b, b, b, NULL);
+        ^
+/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/cpu_avx512_knm.c:9:9: note: did you mean '_mm512_fmadd_ps'?
+/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/avx512fintrin.h:2716:1: note: '_mm512_fmadd_ps' declared here
+_mm512_fmadd_ps(__m512 __A, __m512 __B, __m512 __C)
+^
+/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/cpu_avx512_knm.c:9:7: error: assigning to '__m512' (vector of 16 'float' values) from incompatible type 'int'
+    b = _mm512_4fmadd_ps(b, b, b, b, b, NULL);
+      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/cpu_avx512_knm.c:11:9: error: implicit declaration of function '_mm512_4dpwssd_epi32' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    a = _mm512_4dpwssd_epi32(a, a, a, a, a, NULL);
+        ^
+/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/cpu_avx512_knm.c:11:9: note: did you mean '_mm512_dpwssd_epi32'?
+/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include/avx512vnniintrin.h:68:1: note: '_mm512_dpwssd_epi32' declared here
+_mm512_dpwssd_epi32(__m512i __S, __m512i __A, __m512i __B)
+^
+/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/distutils/checks/cpu_avx512_knm.c:11:7: error: assigning to '__m512i' (vector of 8 'long long' values) from incompatible type 'int'
+    a = _mm512_4dpwssd_epi32(a, a, a, a, a, NULL);
+      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4 errors generated.
+
+CCompilerOpt.feature_test[1458] : testing failed
+CCompilerOpt.__init__[1696] : skip features (SSE SSE3 SSE2) since its part of baseline
+CCompilerOpt.__init__[1699] : initialize targets groups
+CCompilerOpt.__init__[1701] : parse target group simd_test
+CCompilerOpt._parse_target_tokens[1912] : skip targets (VSX NEON FMA4 VSX2 XOP VSX3 ASIMD) not part of baseline or dispatch-able features
+CCompilerOpt._parse_policy_not_keepbase[2022] : skip baseline features (SSE2)
+CCompilerOpt.generate_dispatch_header[2236] : generate CPU dispatch header: (build/src.macosx-10.7-x86_64-3.7/numpy/distutils/include/npy_cpu_dispatch_config.h)
+CCompilerOpt.generate_dispatch_header[2247] : dispatch header dir build/src.macosx-10.7-x86_64-3.7/numpy/distutils/include does not exist, creating it
+CCompilerOpt.feature_extra_checks[1519] : Testing extra checks for feature 'AVX512F' (AVX512F_REDUCE)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -Werror'
+CCompilerOpt.feature_extra_checks[1519] : Testing extra checks for feature 'AVX512_SKX' (AVX512BW_MASK AVX512DQ_MASK)
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -Werror'
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3 -mssse3 -msse4.1 -mpopcnt -msse4.2 -mavx -mf16c -mfma -mavx2 -mavx512f -mavx512cd -mavx512vl -mavx512bw -mavx512dq -Werror'
+Detected changes on compiler optimizations, force rebuilding
+building 'measure._find_contours_cy' extension
+compiling C sources
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include -I/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include -Ibuild/src.macosx-10.7-x86_64-3.7/numpy/distutils/include -I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3'
+gcc: ./_find_contours_cy.c
+In file included from ./_find_contours_cy.c:623:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1944:
+/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: "Using deprecated NumPy API, disable it with "          "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+gcc -bundle -undefined dynamic_lookup -L/Users/timothytyree/miniconda3/envs/wenv/lib -arch x86_64 -L/Users/timothytyree/miniconda3/envs/wenv/lib -arch x86_64 -arch x86_64 build/temp.macosx-10.7-x86_64-3.7/_find_contours_cy.o -o ./_find_contours_cy.cpython-37m-darwin.so
+building 'measure._find_contours_pbc_cy' extension
+compiling C sources
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include -I/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include -Ibuild/src.macosx-10.7-x86_64-3.7/numpy/distutils/include -I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3'
+gcc: ./_find_contours_pbc_cy.c
+In file included from ./_find_contours_pbc_cy.c:623:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1944:
+/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: "Using deprecated NumPy API, disable it with "          "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+gcc -bundle -undefined dynamic_lookup -L/Users/timothytyree/miniconda3/envs/wenv/lib -arch x86_64 -L/Users/timothytyree/miniconda3/envs/wenv/lib -arch x86_64 -arch x86_64 build/temp.macosx-10.7-x86_64-3.7/_find_contours_pbc_cy.o -o ./_find_contours_pbc_cy.cpython-37m-darwin.so
+building 'measure._find_tips_pbc_cy' extension
+compiling C sources
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include -I/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include -Ibuild/src.macosx-10.7-x86_64-3.7/numpy/distutils/include -I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3'
+gcc: ./_find_tips_pbc_cy.c
+In file included from ./_find_tips_pbc_cy.c:623:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1944:
+/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: "Using deprecated NumPy API, disable it with "          "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+gcc -bundle -undefined dynamic_lookup -L/Users/timothytyree/miniconda3/envs/wenv/lib -arch x86_64 -L/Users/timothytyree/miniconda3/envs/wenv/lib -arch x86_64 -arch x86_64 build/temp.macosx-10.7-x86_64-3.7/_find_tips_pbc_cy.o -o ./_find_tips_pbc_cy.cpython-37m-darwin.so
+building 'measure._find_tips_kernel_cy' extension
+compiling C sources
+C compiler: gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64 -I/Users/timothytyree/miniconda3/envs/wenv/include -arch x86_64
+
+compile options: '-I/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include -I/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include -Ibuild/src.macosx-10.7-x86_64-3.7/numpy/distutils/include -I/Users/timothytyree/miniconda3/envs/wenv/include/python3.7m -c'
+extra options: '-msse -msse2 -msse3'
+gcc: ./_find_tips_kernel_cy.c
+In file included from ./_find_tips_kernel_cy.c:623:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:12:
+In file included from /Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1944:
+/Users/timothytyree/miniconda3/envs/wenv/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: "Using deprecated NumPy API, disable it with "          "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it with " \
+ ^
+1 warning generated.
+gcc -bundle -undefined dynamic_lookup -L/Users/timothytyree/miniconda3/envs/wenv/lib -arch x86_64 -L/Users/timothytyree/miniconda3/envs/wenv/lib -arch x86_64 -arch x86_64 build/temp.macosx-10.7-x86_64-3.7/_find_tips_kernel_cy.o -o ./_find_tips_kernel_cy.cpython-37m-darwin.so
+
+########### EXT COMPILER OPTIMIZATION ###########
+Platform      : 
+  Architecture: x64
+  Compiler    : gcc
+
+CPU baseline  : 
+  Requested   : 'min'
+  Enabled     : SSE SSE2 SSE3
+  Flags       : -msse -msse2 -msse3
+  Extra checks: none
+
+CPU dispatch  : 
+  Requested   : 'max -xop -fma4'
+  Enabled     : SSSE3 SSE41 POPCNT SSE42 AVX F16C FMA3 AVX2 AVX512F AVX512CD AVX512_KNL AVX512_SKX AVX512_CLX AVX512_CNL AVX512_ICL
+  Generated   : none
+CCompilerOpt._cache_write[796] : write cache to path -> /Users/timothytyree/Documents/GitHub/care_worker/python/worker/lib/measure/build/temp.macosx-10.7-x86_64-3.7/ccompiler_opt_cache_ext.py

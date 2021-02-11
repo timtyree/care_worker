@@ -19,3 +19,7 @@ python/output/
 python/osg_output/
 python/worker/ignore.txt
 python/worker/curl-linkgen.sh
+*.d
+*.o
+*.so
+*.so

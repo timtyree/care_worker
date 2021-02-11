@@ -12,11 +12,11 @@ from lib.routines.return_longest_traj import return_longest_trajectories
 import random
 import os,sys
 
-def run_main(txt_id1):
+def run_main(txt_id1,mode='FK'):
 	#randomly determine which initial condition to use
 	width_in=1800
 	max_area=900**2 #sqpixels
-	min_area=300**2 #sqpixels
+	min_area=200**2 #sqpixels
 	L=int(np.floor(np.sqrt(100*random.randint(min_area/100,max_area/100))))#UNCOMMENT_HERE
 	# L=112#int(np.floor(np.sqrt(random.uniform(min_area,max_area))))#COMMENT_HERE
 	# N_txt_id1=4-1#the max index of the main-square
@@ -28,14 +28,19 @@ def run_main(txt_id1):
 		txt_id2=0
 	worker_dir=os.getcwd()#nb_dir#os.path.join(nb_dir,'worker')
 	width=L;height=L;
-	V_threshold=-50
+	if mode=='FK':
+		V_threshold=0.4
+		dt=0.025
+	else:
+		V_threshold=-50
+		dt=0.1
 	# txt_id1=0;txt_id2=8#COMMENT_HERE
 	tmax_sec=30.
 	# tmax_sec=.15 #max time to integratein seconds#COMMENT_HERE
 	tmax=tmax_sec * 10**3
 	# K_o=7.#5.4 higher K_o should give shorter APD#
 	dsdpixel=0.025#cm/pixel  # area=width*height*dsdpixel**2
-	dt = 0.1 # milliseconds
+	# dt = 0.1 # milliseconds
 	DT = 2   #ms between spiral tip frames
 	save_every_n_frames=int(DT/dt)
 	tmin=100# milliseconds
@@ -44,7 +49,7 @@ def run_main(txt_id1):
 	n_tips = 1
 	round_t_to_n_digits=0
 	tmin_early_stopping=100
-	jump_thresh=20.
+	jump_thresh=30.
 	# round_output_decimals
 	################################
 	# Setup file system and initial conditions
@@ -63,7 +68,7 @@ def run_main(txt_id1):
 	# np.savez_compressed(ic_fn,txt)
 	#delete the mother initial condition (as she is >200MB)
 	# os.chdir(worker_dir)
-	# os.remove(os.path.join('ic','ic1800x1800.npz'))
+	os.remove(os.path.join('ic','ic1800x1800.npz'))#UNCOMMENT_HERE
 
 	#initialize filesystem if not already initialized
 	# cwd=os.getcwd()
@@ -88,7 +93,7 @@ def run_main(txt_id1):
 	# 		os.rename('ic-out','ic-in')
 	# 		os.rename('ic-in2','ic-out')
 	# 		# print('ic reset')
-	txt= get_txt(txt_id1,txt_id2,width,height,worker_dir)
+	txt= get_txt(txt_id1,txt_id2,width,height,worker_dir,mode=mode)
 	df=return_tips_from_txt(
 	    txt=txt,
 	    h=dt,
@@ -96,7 +101,7 @@ def run_main(txt_id1):
 	    V_threshold=V_threshold,
 	    dsdpixel=dsdpixel,
 	    tmin_early_stopping=tmin_early_stopping,
-	    save_every_n_frames=save_every_n_frames)
+	    save_every_n_frames=save_every_n_frames,mode='FK')
 	del txt
 
 	# df = return_longest_trajectories(df, width, height, dsdpixel, n_tips = n_tips, DT = DT,
@@ -136,6 +141,8 @@ def run_main(txt_id1):
 	# Track, unwrap, and select longest trajectories
 	################################
 	if df is not None:
+		# unwrapped_fn=log_to_unwrapped_trajectory(log_dir, use_cache=True,width=width, height=height,
+		# 										 sr=sr, mem=mem)
 		# UNCOMMENT_HERE
 		# open 2 fds
 		null_fds = [os.open(os.devnull, os.O_RDWR) for x in range(2)]
@@ -144,11 +151,7 @@ def run_main(txt_id1):
 		# put /dev/null fds on 1 and 2
 		os.dup2(null_fds[0], 1)
 		os.dup2(null_fds[1], 2)
-
 		# *** run the function ***
-		# unwrapped_fn=log_to_unwrapped_trajectory(log_dir, use_cache=True,width=width, height=height,
-		# 										 sr=sr, mem=mem)
-		# df=return_unwrapped_trajectory(df, width, height, sr, mem, dsdpixel, use_cache=True)#, **kwargs)
 		df = return_longest_trajectories(df, width, height, dsdpixel, n_tips = n_tips, DT = DT,
 		                                round_t_to_n_digits=round_t_to_n_digits, jump_thresh=jump_thresh)#, **kwargs)
 
@@ -161,7 +164,9 @@ def run_main(txt_id1):
 		os.close(null_fds[1])
 
 
-		# #get and save longest unwrapped trajectory
+
+
+		# #get longest unwrapped trajectory
 		# df=get_longest_trajectories(unwrapped_fn,width=width,height=height,
 		# 							n_tips = n_tips, DS = dsdpixel,DT = DT,
 		# 							round_t_to_n_digits=round_t_to_n_digits)

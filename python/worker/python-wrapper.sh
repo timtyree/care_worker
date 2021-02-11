@@ -5,16 +5,18 @@ module load python/3.7.0
 tar -xzf worker_env.tar.gz
 python3 -m venv worker_env
 source worker_env/bin/activate &> ignore.txt
-python3 -m pip install scikit-learn cython scikit-image gdown numba &> ignore.txt
+# python3 -m pip install scikit-learn cython scikit-image gdown numba pandas numpy &> ignore.txt
 #get lib
 git clone https://github.com/timtyree/care_worker.git
 cd care_worker/python/worker
-#compile cython
+#compile lib
 cd lib/measure
 ./setup.sh &> ignore.txt
 cd ../..
 
 #run sim
-python3 ./return_longest_unwrapped_traj.py $1
+# python3 ./test_run.py $1
+python3 ./return_longest_unwrapped_traj.py $1 
+
 
 deactivate
