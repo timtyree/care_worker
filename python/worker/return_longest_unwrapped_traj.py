@@ -161,7 +161,7 @@ def run_main(txt_id1):
 		os.close(null_fds[1])
 
 
-		# #get longest unwrapped trajectory
+		# #get and save longest unwrapped trajectory
 		# df=get_longest_trajectories(unwrapped_fn,width=width,height=height,
 		# 							n_tips = n_tips, DS = dsdpixel,DT = DT,
 		# 							round_t_to_n_digits=round_t_to_n_digits)
