@@ -16,5 +16,6 @@ python/worker/lib/model/comp_check_LR/fort.10
 python/worker/lib/model/comp_check_LR/fort.1
 *.dat
 python/output/
+python/osg_output/
 python/worker/ignore.txt
 python/worker/curl-linkgen.sh
