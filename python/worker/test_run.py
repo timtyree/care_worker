@@ -141,6 +141,8 @@ def run_main(txt_id1,mode='FK'):
 	# Track, unwrap, and select longest trajectories
 	################################
 	if df is not None:
+		# unwrapped_fn=log_to_unwrapped_trajectory(log_dir, use_cache=True,width=width, height=height,
+		# 										 sr=sr, mem=mem)
 		# # UNCOMMENT_HERE
 		# # open 2 fds
 		# null_fds = [os.open(os.devnull, os.O_RDWR) for x in range(2)]
@@ -150,9 +152,7 @@ def run_main(txt_id1,mode='FK'):
 		# os.dup2(null_fds[0], 1)
 		# os.dup2(null_fds[1], 2)
 		# *** run the function ***
-		# unwrapped_fn=log_to_unwrapped_trajectory(log_dir, use_cache=True,width=width, height=height,
-		# 										 sr=sr, mem=mem)
-		# df=return_unwrapped_trajectory(df, width, height, sr, mem, dsdpixel, use_cache=True)#, **kwargs)
+
 		df = return_longest_trajectories(df, width, height, dsdpixel, n_tips = n_tips, DT = DT,
 		                                round_t_to_n_digits=round_t_to_n_digits, jump_thresh=jump_thresh)#, **kwargs)
 
