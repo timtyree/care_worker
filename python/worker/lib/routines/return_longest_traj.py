@@ -79,8 +79,8 @@ def return_longest_trajectories(df, width, height, dsdpixel, n_tips = 1, DT = 2.
     #     # if len(jump_index_array)>0:
     #     #     ji = jump_index_array[0]
     #     #     d.drop(index=index_values[ji:], inplace=True)
-        df_lst.append(d)
-    df_traj = pd.concat(df_lst)
+        # df_lst.append(d)
+    # df_traj = pd.concat(df_lst)
 
     #round trajectory times to remove machine noise from floating point arithmatic
     df_traj['t'] = df_traj.t.round(round_t_to_n_digits)
