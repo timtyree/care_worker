@@ -95,8 +95,10 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK'):
 	if not os.path.exists('ic'):
 		os.mkdir('ic')
 	if mode=='FK':
+		print('downloading FK model...')
 		gid=get_gid_fk(txt_id)
 	else:
+		print('downloading LR model...')
 		gid=get_gid(txt_id)
 	run_downloader(gid=gid)
 	# cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.npz'

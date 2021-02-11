@@ -18,3 +18,4 @@ python/worker/lib/model/comp_check_LR/fort.1
 python/output/
 python/worker/ignore.txt
 python/worker/curl-linkgen.sh
+python/-f
