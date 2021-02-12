@@ -12,10 +12,10 @@ from lib.routines.return_longest_traj import return_longest_trajectories
 import random
 import os,sys
 
-def run_main(txt_id1,mode='FK'):
+def run_main(txt_id1,mode='LR'):
 	#randomly determine which initial condition to use
 	width_in=1800
-	max_area=900**2 #sqpixels
+	max_area=600**2 #sqpixels
 	min_area=200**2 #sqpixels
 	L=int(np.floor(np.sqrt(100*random.randint(min_area/100,max_area/100))))#UNCOMMENT_HERE
 	L=112#int(np.floor(np.sqrt(random.uniform(min_area,max_area))))#COMMENT_HERE
@@ -178,8 +178,7 @@ def run_main(txt_id1,mode='FK'):
 		# 	os.mkdir(log_folder)
 		# os.chdir(log_folder)
 		# df.to_csv('out.csv', index=False)
-
-
+		print(f'mode={mode}')
 		print(f'Printing Inputs:\nL={L}, txt_id1={txt_id1}, txt_id2={txt_id2}')
 		print(f"Printing Outputs:")#" of longest unwrapped spiral tip trajectory were:")
 		# with open('out.csv') as f:
@@ -193,9 +192,13 @@ def run_main(txt_id1,mode='FK'):
 
 if __name__=="__main__":
 	import sys
+	from random import randint
+	from time import sleep
 	if len(sys.argv)==0:
 		print("Example Usage: python3 test_run.py 1")
 	else:
+		# #wait a randomly selected amount of time (10-100 seconds)#UNCOMMENT_HERE
+		# sleep(randint(10,100))
 		# # parse arguments
 		txt_id1 = int(sys.argv[1].split(',')[0])
 		run_main(txt_id1)

@@ -29,7 +29,7 @@ from ..model.LR_model_optimized_w_Istim import *
 import time, os, sys, re
 
 def return_tips_from_txt(txt, h, tmax, V_threshold,dsdpixel,
-	tmin_early_stopping, save_every_n_frames, mode='FK', **kwargs):
+	tmin_early_stopping, save_every_n_frames, mode, **kwargs):
 	'''generates a log of tip locations on 2D grid with periodic boundary conditions.
 	default key word arguments are returned by lib.routines.kwargs.get_kwargs(initial_condition_dir).'''
 	nb_dir=os.getcwd()
@@ -130,7 +130,7 @@ def return_tips_from_txt(txt, h, tmax, V_threshold,dsdpixel,
 if __name__=='__main__':
 	from ..utils import get_txt
 	nb_dir='/Users/timothytyree/Documents/GitHub/care/notebooks/lib/routines'
-	txt=get_txt(3,0,100,100,nb_dir)
+	txt=get_txt(3,0,100,100,nb_dir, mode='LR')
 	# width,height,chno=txt.shape
 	df=return_tips_from_txt(
 	    txt=txt,

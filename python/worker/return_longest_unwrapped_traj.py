@@ -101,7 +101,7 @@ def run_main(txt_id1,mode='FK'):
 	    V_threshold=V_threshold,
 	    dsdpixel=dsdpixel,
 	    tmin_early_stopping=tmin_early_stopping,
-	    save_every_n_frames=save_every_n_frames,mode='FK')
+	    save_every_n_frames=save_every_n_frames,mode=mode)
 	del txt
 
 	# df = return_longest_trajectories(df, width, height, dsdpixel, n_tips = n_tips, DT = DT,
@@ -195,6 +195,10 @@ if __name__=="__main__":
 	if len(sys.argv)==0:
 		print("Example Usage: python3 test_run.py 1")
 	else:
+		#wait a randomly selected amount of time (10-100 seconds)#UNCOMMENT_HERE
+		from random import randint
+		from time import sleep
+		sleep(randint(10,100))
 		# # parse arguments
 		txt_id1 = int(sys.argv[1].split(',')[0])
 		run_main(txt_id1)

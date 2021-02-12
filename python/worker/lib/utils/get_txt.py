@@ -105,7 +105,7 @@ def get_gid(txt_id):
 				gid='1Hu-w9vChqRAR4EZSuLqZbG7qh5gFgBbL'
 	return gid
 
-def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK'):
+def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK',**kwargs):
 	'''returns the first gdrive download file found in the directory, worker_dir.'''
 	os.chdir(worker_dir)
 	if not os.path.exists('ic'):
@@ -136,7 +136,7 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK'):
 	return txt
 
 def get_txt_lst(txt_id1,width,height,worker_dir,**kwargs):
-	txt_in=download_txt(txt_id1,worker_dir)
+	txt_in=download_txt(txt_id1,worker_dir,**kwargs)
 	array_lst = chunk_array(txt_in, width, height, typeout='float64')
 	return array_lst
 

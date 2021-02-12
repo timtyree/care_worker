@@ -14,8 +14,7 @@ $ scp -r worker TimtheTyrant@login05.osgconnect.net:~
 
 <!-- pack  -->
 tar czf worker-transfer.tar.gz worker
-
-$ scp -r worker-transfer.tar.gz TimtheTyrant@login05.osgconnect.net:~
+scp worker-transfer.tar.gz TimtheTyrant@login05.osgconnect.net:~
 
 <!-- unpack  -->
 tar -xzf worker-transfer.tar.gz
