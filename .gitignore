@@ -20,3 +20,5 @@ python/osg_output/
 python/worker/ignore.txt
 python/worker/curl-linkgen.sh
 python/-f
+*.o
+*.d
