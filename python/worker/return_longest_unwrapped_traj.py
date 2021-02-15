@@ -70,7 +70,7 @@ def run_main(txt_id1,mode='FK'):
 	
 	txt= get_txt(txt_id1,txt_id2,width,height,worker_dir,mode=mode)
 	#delete the mother initial condition (as she is >200MB)
-	os.remove(os.path.join('ic','ic1800x1800.npz'))#UNCOMMENT_HERE
+	# os.remove(os.path.join('ic','ic1800x1800.npz'))#UNCOMMENT_HERE
 
 	#initialize filesystem if not already initialized
 	# cwd=os.getcwd()
