@@ -15,7 +15,7 @@ import os,sys
 def run_main(txt_id1,mode='FK'):
 	#randomly determine which initial condition to use
 	width_in=1800
-	max_area=900**2 #sqpixels
+	max_area=500**2 #sqpixels
 	min_area=200**2 #sqpixels
 	L=int(np.floor(np.sqrt(100*random.randint(min_area/100,max_area/100))))#UNCOMMENT_HERE
 	# L=112#int(np.floor(np.sqrt(random.uniform(min_area,max_area))))#COMMENT_HERE
@@ -35,8 +35,8 @@ def run_main(txt_id1,mode='FK'):
 		V_threshold=-50
 		dt=0.1
 	# txt_id1=0;txt_id2=8#COMMENT_HERE
-	tmax_sec=30.
-	# tmax_sec=.15 #max time to integratein seconds#COMMENT_HERE
+	tmax_sec=10.
+	tmax_sec=.15 #max time to integratein seconds#COMMENT_HERE
 	tmax=tmax_sec * 10**3
 	# K_o=7.#5.4 higher K_o should give shorter APD#
 	dsdpixel=0.025#cm/pixel  # area=width*height*dsdpixel**2
