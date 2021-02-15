@@ -35,7 +35,7 @@ def run_main(txt_id1,mode='FK'):
 		V_threshold=-50
 		dt=0.1
 	# txt_id1=0;txt_id2=8#COMMENT_HERE
-	tmax_sec=10.
+	tmax_sec=10
 	tmax_sec=.15 #max time to integratein seconds#COMMENT_HERE
 	tmax=tmax_sec * 10**3
 	# K_o=7.#5.4 higher K_o should give shorter APD#
@@ -66,8 +66,10 @@ def run_main(txt_id1,mode='FK'):
 	# 	os.mkdir('ic-out')
 	# txt= get_txt(txt_id1,txt_id2,width,height,worker_dir)
 	# np.savez_compressed(ic_fn,txt)
-	#delete the mother initial condition (as she is >200MB)
 	# os.chdir(worker_dir)
+	
+	txt= get_txt(txt_id1,txt_id2,width,height,worker_dir,mode=mode)
+	#delete the mother initial condition (as she is >200MB)
 	os.remove(os.path.join('ic','ic1800x1800.npz'))#UNCOMMENT_HERE
 
 	#initialize filesystem if not already initialized
@@ -93,7 +95,6 @@ def run_main(txt_id1,mode='FK'):
 	# 		os.rename('ic-out','ic-in')
 	# 		os.rename('ic-in2','ic-out')
 	# 		# print('ic reset')
-	txt= get_txt(txt_id1,txt_id2,width,height,worker_dir,mode=mode)
 	df=return_tips_from_txt(
 	    txt=txt,
 	    h=dt,
