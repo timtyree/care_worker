@@ -35,8 +35,8 @@ def run_main(txt_id1,mode='FK'):
 		V_threshold=-50
 		dt=0.1
 	# txt_id1=0;txt_id2=8#COMMENT_HERE
-	tmax_sec=10
-	tmax_sec=.15 #max time to integratein seconds#COMMENT_HERE
+	tmax_sec=30
+	# tmax_sec=.15 #max time to integratein seconds#COMMENT_HERE
 	tmax=tmax_sec * 10**3
 	# K_o=7.#5.4 higher K_o should give shorter APD#
 	dsdpixel=0.025#cm/pixel  # area=width*height*dsdpixel**2
