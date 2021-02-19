@@ -15,8 +15,8 @@ cd lib/measure
 cd ../..
 
 #run sim
-python3 ./test_run.py $1
-# python3 ./return_longest_unwrapped_traj.py $1 
-
+python3 ./test_run.py $1 $2 $3 $4
+# python3 ./return-emsd-run.py $1 $2 $3 $4
+# python3 ./return_longest_unwrapped_traj.py $1
 
 deactivate
