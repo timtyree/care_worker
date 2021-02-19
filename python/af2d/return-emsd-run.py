@@ -47,13 +47,13 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 		print('removing ic/ic1800x1800.npz did not work')
 		print(e)
 	df=return_tips_from_txt(
-	    txt=txt,
-	    h=dt,
-	    tmax=tmax,
-	    V_threshold=V_threshold,
-	    dsdpixel=dsdpixel,
-	    tmin_early_stopping=tmin_early_stopping,
-	    save_every_n_frames=save_every_n_frames,mode=mode)
+		txt=txt,
+		h=dt,
+		tmax=tmax,
+		V_threshold=V_threshold,
+		dsdpixel=dsdpixel,
+		tmin_early_stopping=tmin_early_stopping,
+		save_every_n_frames=save_every_n_frames,mode=mode)
 	del txt
 
 	#drop columns that won't be used
@@ -118,10 +118,10 @@ if __name__=="__main__":
 		print("Error: not enough arguments specified")
 	else:
 		# parse arguments
-        L		   = int(sys.argv[1].split(',')[0])
-        diffCoef   = float(sys.argv[2].split(',')[0])
-        txt_id1    = int(sys.argv[3].split(',')[0])
-        txt_id2    = int(float(sys.argv[4].split(',')[0]))
+		L		   = int(sys.argv[1].split(',')[0])
+		diffCoef   = float(sys.argv[2].split(',')[0])
+		txt_id1    = int(sys.argv[3].split(',')[0])
+		txt_id2    = int(float(sys.argv[4].split(',')[0]))
 		# #wait a randomly selected amount of time (10-200 seconds
 		sleep(randint(10,200)))#UNCOMMENT_HERE
 		run_main(L, diffCoef, txt_id1, txt_id2)

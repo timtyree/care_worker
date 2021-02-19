@@ -96,13 +96,13 @@ def run_main(txt_id1,mode='FK'):
 	# 		os.rename('ic-in2','ic-out')
 	# 		# print('ic reset')
 	df=return_tips_from_txt(
-	    txt=txt,
-	    h=dt,
-	    tmax=tmax,
-	    V_threshold=V_threshold,
-	    dsdpixel=dsdpixel,
-	    tmin_early_stopping=tmin_early_stopping,
-	    save_every_n_frames=save_every_n_frames,mode=mode)
+		txt=txt,
+		h=dt,
+		tmax=tmax,
+		V_threshold=V_threshold,
+		dsdpixel=dsdpixel,
+		tmin_early_stopping=tmin_early_stopping,
+		save_every_n_frames=save_every_n_frames,mode=mode)
 	del txt
 
 	# df = return_longest_trajectories(df, width, height, dsdpixel, n_tips = n_tips, DT = DT,
@@ -154,7 +154,7 @@ def run_main(txt_id1,mode='FK'):
 		os.dup2(null_fds[1], 2)
 		# *** run the function ***
 		df = return_longest_trajectories(df, width, height, dsdpixel, n_tips = n_tips, DT = DT,
-		                                round_t_to_n_digits=round_t_to_n_digits, jump_thresh=jump_thresh)#, **kwargs)
+										round_t_to_n_digits=round_t_to_n_digits, jump_thresh=jump_thresh)#, **kwargs)
 
 		# UNCOMMENT_HERE
 		# restore file descriptors so I can print the results

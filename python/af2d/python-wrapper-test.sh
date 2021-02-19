@@ -8,7 +8,7 @@ source worker_env/bin/activate &> ignore.txt
 # python3 -m pip install scikit-learn cython scikit-image gdown numba pandas numpy &> ignore.txt
 #get lib
 git clone https://github.com/timtyree/care_worker.git
-cd care_worker/python/af2d-sim-transfer
+cd care_worker/python/af2d
 #compile cython in lib
 cd lib/measure
 ./setup.sh &> ignore.txt
