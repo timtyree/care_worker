@@ -12,6 +12,8 @@ $ ssh TimtheTyrant@login05.osgconnect.net
 <!-- copy file to the open science grid using scp-->
 $ scp -r worker TimtheTyrant@login05.osgconnect.net:~
 
+scp af2d-sim-transfer.tar.gz TimtheTyrant@login05.osgconnect.net:~
+
 <!-- pack  -->
 tar czf worker-transfer.tar.gz worker
 scp worker-transfer.tar.gz TimtheTyrant@login05.osgconnect.net:~
@@ -47,28 +49,28 @@ $ condor_submit pde-sim.submit
     Submitting job(s)..........
     10 job(s) submitted to cluster 329837.
 
-Apply your `condor_q` and `connect watch` knowledge to see this job progress. After all 
-jobs finished, execute the `post_script.sh  script to sort the results. 
+Apply your `condor_q` and `connect watch` knowledge to see this job progress. After all
+jobs finished, execute the `post_script.sh  script to sort the results.
 
     ./post_process.sh
-    or 
+    or
     ./post_script.sh
 
-then, 
+then,
 scp TimtheTyrant@login05.osgconnect.net:worker/Log.tar.gz .
 <!--queue command tricks-->
 <!-- arguments = $(x_low) $(x_high) $(y_low) $(y_high)
 # Queue command  list
 queue x_low, x_high, y_low, y_high from (
--9 9 -9 9 
--8 8 -8 8 
--7 7 -7 7 
--6 6 -6 6 
--5 5 -5 5 
--4 4 -4 4 
--3 3 -3 3 
--2 2 -2 2 
--1 1 -1 1 
+-9 9 -9 9
+-8 8 -8 8
+-7 7 -7 7
+-6 6 -6 6
+-5 5 -5 5
+-4 4 -4 4
+-3 3 -3 3
+-2 2 -2 2
+-1 1 -1 1
 )
 
 # Queue from file
