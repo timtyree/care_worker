@@ -68,6 +68,18 @@ def return_longest_trajectories(df, width, height, dsdpixel, n_tips = 1, DT = 2.
         pid_longest_lst = list(s.index.values[:n_tips])
     df_traj = pd.concat([df[df.particle==pid] for pid in pid_longest_lst])
 
+    #truncate trajectories to their first apparent jump (pbc jumps should have been removed already)
+    df_lst = []
+    for pid in  pid_longest_lst:#[2:]:
+        d = df[(df.particle==pid)].copy()
+        x_values, y_values = d[['x','y']].values.T
+        index_values = d.index.values.T
+        jump_index_array, spd_lst = find_jumps(x_values,y_values,width,height, DS=DS,DT=DT, jump_thresh=jump_thresh, **kwargs)#.25)
+        if len(jump_index_array)>0:
+            ji = jump_index_array[0]
+            d.drop(index=index_values[ji:], inplace=True)
+        df_lst.append(d)
+    df_traj = pd.concat(df_lst)
     # #truncate trajectories to their first apparent jump (pbc jumps should have been removed already)
     # df_lst = []
     # for pid in  pid_longest_lst:#[2:]:

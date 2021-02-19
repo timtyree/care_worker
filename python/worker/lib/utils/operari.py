@@ -6,24 +6,24 @@
 import os, re, sys, matplotlib.pyplot as plt, numpy as np, pandas as pd
 # from tkinter import filedialog, Tk
 from glob import glob
-
+from tkinter import Tk,filedialog
 def get_all_trial_folders_not_archived(ic_suite_fn):
-    os.chdir(ic_suite_fn)
-    dir_lst=os.listdir()
-    trial_folder_name_lst=[]
-    for dir_run in dir_lst:
-        # dir_run=dir_lst[0]
-        trial_folder_name=dir_run
-        #test if trial_folder_name is not a folder
-        boo  = os.path.isdir(trial_folder_name)
-        #test if trial_folder_name starts with ic
-        boo &=trial_folder_name[:2]!='ic'
-        #test if trial_folder_name contains archiv
-        boo &=trial_folder_name.find('archiv')==-1
-        #if not, append it to the trial_folder_name_lst
-        if boo:
-            trial_folder_name_lst.append(trial_folder_name)
-    return trial_folder_name_lst
+	os.chdir(ic_suite_fn)
+	dir_lst=os.listdir()
+	trial_folder_name_lst=[]
+	for dir_run in dir_lst:
+		# dir_run=dir_lst[0]
+		trial_folder_name=dir_run
+		#test if trial_folder_name is not a folder
+		boo  = os.path.isdir(trial_folder_name)
+		#test if trial_folder_name starts with ic
+		boo &=trial_folder_name[:2]!='ic'
+		#test if trial_folder_name contains archiv
+		boo &=trial_folder_name.find('archiv')==-1
+		#if not, append it to the trial_folder_name_lst
+		if boo:
+			trial_folder_name_lst.append(trial_folder_name)
+	return trial_folder_name_lst
 
 
 def get_all_files_matching_pattern(file,trgt):
@@ -49,6 +49,10 @@ def init_filesystem_bd(base_folder, results_folder = 'ds_5_param_set_8', subfold
 	if subfolder_list is None:
 		subfolder_list = ('birth-death-rates', 'trajectories', 'Log')
 	os.chdir(base_folder)
+	if not os.path.exists('ic-in'):
+		os.mkdir('ic-in')
+	if not os.path.exists('ic-out'):
+		os.mkdir('ic-out')
 	os.mkdir(results_folder)
 	os.chdir(results_folder)
 	for folder in subfolder_list:
@@ -107,18 +111,18 @@ def get_unique_dir(path, width=3):
 	os.makedirs(new_path)
 	return new_path
 
-# def search_for_file (currdir = os.getcwd()):
-# 	'''use a widget dialog to selecting a file.  Increasing the default fontsize seems too involved for right now.'''
-# 	root = Tk()
-# 	# root.config(font=("Courier", 44))
-# 	tempdir = filedialog.askopenfilename(parent=root,
-# 										 initialdir=currdir,
-# 										 title="Please select a file")#,
-# 										 # filetypes = (("all files","*.*")))
-# 	root.destroy()
-# 	if len(tempdir) > 0:
-# 		print ("File: %s" % tempdir)
-# 	return tempdir
+def search_for_file (currdir = os.getcwd()):
+	'''use a widget dialog to selecting a file.  Increasing the default fontsize seems too involved for right now.'''
+	root = Tk()
+	# root.config(font=("Courier", 44))
+	tempdir = filedialog.askopenfilename(parent=root,
+										 initialdir=currdir,
+										 title="Please select a file")#,
+										 # filetypes = (("all files","*.*")))
+	root.destroy()
+	if len(tempdir) > 0:
+		print ("File: %s" % tempdir)
+	return tempdir
 
 def load_buffer(data_dir,**kwargs):
 	if data_dir[-4:]=='.npy':

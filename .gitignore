@@ -22,3 +22,5 @@ python/worker/curl-linkgen.sh
 python/-f
 *.o
 *.d
+*.pyc
+*.pyc
