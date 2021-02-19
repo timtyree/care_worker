@@ -12,7 +12,7 @@ from .. import *
 from .track_tips import *
 from ..utils.dist_func import *
 from ..utils.utils_traj import *
-
+from .compute_msd import * #unwrap_traj_and_center
 
 def return_unwrapped_trajectory(df, width, height, sr, mem, dsdpixel,round_t_to_n_digits,jump_thresh, **kwargs):
     '''df is a pandas.DataFrame containing the tip log results.'''
