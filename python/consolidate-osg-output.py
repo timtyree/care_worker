@@ -28,6 +28,7 @@ def next_line(f):
     yield f.readline()
 
 def parse_input_params(input_fn):
+    parse_following_line=False
     line_no=0
     #read through until the outputs starts
     with open(input_fn) as f:
@@ -36,6 +37,10 @@ def parse_input_params(input_fn):
             input_dict=parse_inputs(line)
             if len(list(input_dict))>0:
                 found_output=True
+                if found_output and parse_following_line:
+                    line_no+=1
+                    next_line_dict=parse_inputs(line)
+                    input_dict.update(next_line_dict)
                 return line_no, input_dict
     return -1,{}
 
@@ -53,17 +58,18 @@ def parse_input_fn(input_fn):
         return None
 
     df.drop(columns=['index'],inplace=True)
-    df
     #reset frame number to start at zero
-    df['frame']=df['frame']-df['frame'].values[0]
+    # df['frame']=df['frame']-df['frame'].values[0]
     #updating df...
     for k in input_dict.keys():
         df[k]=input_dict[k]
 
-    index_labels=["L","txt_id1","txt_id2"]
-    column_labels=["frame","x","y","particle","n","grad_ux","grad_uy","grad_vx","grad_vy"]
-    df.set_index(keys=index_labels,inplace=True)#, columns=column_labels)
-    # df=df[column_labels]
+    #(optional) if a job was done twice for the same setting, remove it using the pandas.DataFrame.index set datastructure
+    # index_labels=list(input_dict.keys())
+    # # index_labels=["L","txt_id1","txt_id2"]
+    # # # column_labels=["frame","x","y","particle","n","grad_ux","grad_uy","grad_vx","grad_vy"]
+    # df.set_index(keys=index_labels,inplace=True)#, columns=column_labels)
+    # # df=df[column_labels]
     return df
 
 def return_df_updated_with_input_folder(input_fn_lst):#,df=None):
@@ -84,8 +90,9 @@ def return_df_updated_with_input_folder(input_fn_lst):#,df=None):
             # TODO(optional for faster runtime): update a df_out only if it does not yet contain input_dict
             # TODO(optional test): assert that whenever an output is repeated,
             # that their results are equal (to floating point precision)
-            K12_index=retval.index.values[0][:3]
-            src="{}_{}_{}".format(*K12_index)
+            NI=4#count the number of times the first NI inputs were used
+            K12_index=retval.index.values[0][:NI]
+            src="{}_{}_{}_{}".format(*K12_index)
             retval['src']=src
             #count if K12_index exists in the set of current index values
             try:
@@ -95,15 +102,17 @@ def return_df_updated_with_input_folder(input_fn_lst):#,df=None):
                 K12_index_set[K12_index]=0
                 # K12_index_set.update({K12_index:0})
                 df_lst.append(retval)
-                duration=retval.t.max()-retval.t.min()#ms
-                duration_lst.append(duration)
+                # duration=retval.t.max()-retval.t.min()#ms
+                # duration_lst.append(duration)
                 # print(f"the src={src} spiral tip lasted {retval.t.max()-retval.t.min()} ms.")
-#     print(K12_index_set)
-    print(f"the mean duration was {np.mean(duration_lst):.2f} ms")
-    print(f"the max duration was {np.max(duration_lst):.2f} ms")
+    #     print(K12_index_set)
+    # print(f"the mean duration was {np.mean(duration_lst):.2f} ms")
+    # print(f"the max duration was {np.max(duration_lst):.2f} ms")
     return df_lst,K12_index_set
 
 if __name__=="__main__":
+	# save_fn='longest_traj_by_area_pbc.csv'
+    save_fn=sys.argv[1].split(',')[0]
 	log_folder="osg_output/Log"
 	# log_folder="/Users/timothytyree/Documents/GitHub/care_worker/python/osg_output/Log"
 	os.chdir(log_folder)
@@ -114,16 +123,14 @@ if __name__=="__main__":
 	df_lst,K12_index_set=return_df_updated_with_input_folder(input_fn_lst)
 	# df.index.values
 	# K12_index_set
-
-	print(f"{len(list(K12_index_set))} distinct trials were successfully recorded.")
+	print(f"results were successfully parsed from {len(list(K12_index_set))} distinct trials.")
 
 	df=pd.concat(df_lst)
 	# df.head()
 
 	#save df as csv in care
 	# save_folder=os.path.join(nb_dir,'Data/cloud_results')
-	save_folder='..'
-	os.chdir(save_folder)
-	save_fn='longest_traj_by_area_pbc.csv'
+	# save_folder='..'
+	# os.chdir(save_folder)
 	df.to_csv(save_fn)
 	print(f'consolidated DataFrame saved in {os.path.abspath(save_fn)}')

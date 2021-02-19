@@ -98,8 +98,8 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 			df=compute_emsd(traj=df.copy(), DT=DT, omit_time=omit_time, printing=False,DS=DS)
 			#print results
 			print(f'mode={mode}')
-			print(f'Printing Inputs:\nL={L}, diffCoef={diffCoef}, txt_id1={txt_id1}, txt_id2={txt_id2}')
-			print(f"num_individuals={num_individuals}")
+			print(f'Printing Inputs:\nL={L}, diffCoef={diffCoef}, txt_id1={txt_id1}, txt_id2={txt_id2}, N={num_individuals}')
+			# print(f"num_individuals={num_individuals}")
 			print(f"Printing Outputs:")#" of longest unwrapped spiral tip trajectory were:")
 			# with open('out.csv') as f:
 			# 	for line in f:
