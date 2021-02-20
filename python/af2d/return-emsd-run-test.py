@@ -12,7 +12,7 @@ import os,sys
 
 def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 	T_min=1000#ms - the minimum lifetime for a trajectory to be considered in the$
-	T_min=100#COMMENT_HERE
+	T_min=1#COMMENT_HERE
 	omit_time=150#ms
 	omit_time=0#COMMENT_HERE
 	worker_dir=os.getcwd()
