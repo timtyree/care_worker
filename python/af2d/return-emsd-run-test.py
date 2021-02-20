@@ -120,6 +120,6 @@ if __name__=="__main__":
 		diffCoef   = float(sys.argv[2].split(',')[0])
 		txt_id1    = int(sys.argv[3].split(',')[0])
 		txt_id2    = int(float(sys.argv[4].split(',')[0]))
-		# #wait a randomly selected amount of time (10-100 seconds
-		# sleep(randint(10,100)))#UNCOMMENT_HERE
+		# #wait a randomly selected amount of time (10-100) seconds
+		# sleep(randint(10,100))#UNCOMMENT_HERE
 		run_main(L, diffCoef, txt_id1, txt_id2)
