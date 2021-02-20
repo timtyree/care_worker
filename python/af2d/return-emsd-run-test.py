@@ -12,7 +12,7 @@ import os,sys
 
 def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 	T_min=1000#ms - the minimum lifetime for a trajectory to be considered in the$
-	T_min=1#COMMENT_HERE
+	T_min=10#COMMENT_HERE
 	omit_time=150#ms
 	omit_time=0#COMMENT_HERE
 	worker_dir=os.getcwd()
@@ -25,7 +25,7 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 		dt=0.1
 		# K_o=7.#5.4 higher K_o should give shorter APD#
 	tmax_sec=30.
-	tmax_sec=.15 #max time to integratein seconds#COMMENT_HERE
+	tmax_sec=.5 #max time to integratein seconds#COMMENT_HERE
 	tmax=tmax_sec * 10**3
 	dsdpixel=0.025#cm/pixel  # area=width*height*dsdpixel**2
 	DT = 1.   #ms between spiral tip frames
