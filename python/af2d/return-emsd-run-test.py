@@ -73,7 +73,7 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 		# os.dup2(null_fds[1], 2)
 
 		#track tips, unwrap them, and then truncate at the first jump of distance greater than jump_thresh pixels
-		df=return_unwrapped_trajectory(df, width, height, sr, mem, dsdpixel,round_t_to_n_digits,jump_thresh)#, **kwargs)
+		df=return_unwrapped_trajectory(df, width, height, sr, mem, dsdpixel, DT, round_t_to_n_digits,jump_thresh)#, **kwargs)
 
 		# # UNCOMMENT_HERE
 		# # turn on logging

@@ -14,7 +14,7 @@ from ..utils.dist_func import *
 from ..utils.utils_traj import *
 from .compute_msd import * #unwrap_traj_and_center
 
-def return_unwrapped_trajectory(df, width, height, sr, mem, dsdpixel,round_t_to_n_digits,jump_thresh, **kwargs):
+def return_unwrapped_trajectory(df, width, height, sr, mem, dsdpixel, DT, round_t_to_n_digits,jump_thresh, **kwargs):
     '''df is a pandas.DataFrame containing the tip log results.'''
     DS=dsdpixel
     # generate_track_tips_pbc
@@ -47,7 +47,7 @@ def return_longest_trajectories(df, width, height, dsdpixel, n_tips = 1, DT = 2.
                                 round_t_to_n_digits=0, jump_thresh=20., **kwargs):
     '''df is a pandas.DataFrame of a tip log'''
     mem=0;sr=width*2;DS=dsdpixel
-    df=return_unwrapped_trajectory(df, width, height, sr, mem, dsdpixel, **kwargs)
+    df=return_unwrapped_trajectory(df, width, height, sr, mem, dsdpixel, DT, round_t_to_n_digits,jump_thresh, **kwargs)
     if n_tips==1:
         df.reset_index(inplace=True)
         try:
