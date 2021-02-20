@@ -28,7 +28,7 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 	tmax_sec=.5 #max time to integratein seconds#COMMENT_HERE
 	tmax=tmax_sec * 10**3
 	dsdpixel=0.025#cm/pixel  # area=width*height*dsdpixel**2
-	DT = 1.   #ms between spiral tip frames
+	DT = .5   #ms between spiral tip frames
 	#NOTE: assert ( save_every_n_frames*dt==DT to floating point precision)
 	DS=dsdpixel
 	save_every_n_frames=int(DT/dt)

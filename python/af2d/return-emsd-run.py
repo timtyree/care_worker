@@ -28,14 +28,14 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 	# tmax_sec=.15 #max time to integratein seconds#COMMENT_HERE
 	tmax=tmax_sec * 10**3
 	dsdpixel=0.025#cm/pixel  # area=width*height*dsdpixel**2
-	DT = 1.   #ms between spiral tip frames
+	DT = 0.5   #ms between spiral tip frames
 	#NOTE: assert ( save_every_n_frames*dt==DT to floating point precision)
 	DS=dsdpixel
 	save_every_n_frames=int(DT/dt)
 	tmin=100# milliseconds
 	mem=0;#memory for tracking
 	sr=width*2#search range for tracking
-	round_t_to_n_digits=0
+	round_t_to_n_digits=3
 	tmin_early_stopping=100
 	jump_thresh=30.
 	################################################################
