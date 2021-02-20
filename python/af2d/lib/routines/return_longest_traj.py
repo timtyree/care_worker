@@ -24,7 +24,7 @@ def return_unwrapped_trajectory(df, width, height, sr, mem, dsdpixel,round_t_to_
     # unwrap_trajectories
     pid_lst = sorted(set(df.particle.values))
     df = pd.concat([unwrap_traj_and_center(df[df.particle==pid].copy(), width, height, DS) for pid in pid_lst])
-
+    pid_longest_lst=pid_lst
     #truncate trajectories to their first apparent jump (pbc jumps should have been removed already)
     df_lst = []
     for pid in  pid_longest_lst:#[2:]:
