@@ -1,10 +1,10 @@
 # logdown.py
 ssh TimtheTyrant@login05.osgconnect.net '
-rm worker/Log.tar.gz;
-cd worker;
+cd af2d;
+rm Log.tar.gz;
 ./post_process.sh
 '
-scp TimtheTyrant@login05.osgconnect.net:worker/Log.tar.gz osg_output/Log.tar.gz
+scp TimtheTyrant@login05.osgconnect.net:af2d/Log.tar.gz osg_output/Log.tar.gz
 tar -xzf osg_output/Log.tar.gz
 
 SAVEFN='emsd_by_area_by_diffCoef_pbc.csv'
