@@ -11,8 +11,7 @@ $ ssh TimtheTyrant@login05.osgconnect.net
 
 <!-- copy file to the open science grid using scp-->
 $ scp -r worker TimtheTyrant@login05.osgconnect.net:~
-
-scp af2d.tar.gz TimtheTyrant@login05.osgconnect.net:~
+$ scp af2d.tar.gz TimtheTyrant@login05.osgconnect.net:~
 
 <!-- pack  -->
 tar czf worker-transfer.tar.gz worker
