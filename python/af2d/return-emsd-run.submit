@@ -14,7 +14,5 @@ request_cpus = 1
 request_memory = 100 MB
 request_disk = 700 MB
 
-next_job_start_delay = 90
-
 PeriodicRelease = ( (CurrentTime - EnteredCurrentStatus) > $RANDOM_INTEGER(3000, 3300, 100) ) && ((NumJobStarts < 4))
 queue L diffCoef txt_id1 txt_id2 from runs/run_emsd.dat
