@@ -49,7 +49,7 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 		h=dt,
 		tmax=tmax,
 		V_threshold=V_threshold,
-		dsdpixel=dsdpixel,
+		dsdpixel=dsdpixel,diffCoef=diffCoef,
 		tmin_early_stopping=tmin_early_stopping,
 		save_every_n_frames=save_every_n_frames,mode=mode)
 	del txt
