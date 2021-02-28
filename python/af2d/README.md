@@ -14,11 +14,16 @@ $ scp -r worker TimtheTyrant@login05.osgconnect.net:~
 $ scp af2d.tar.gz TimtheTyrant@login05.osgconnect.net:~
 
 <!-- pack  -->
-tar czf worker-transfer.tar.gz worker
-scp worker-transfer.tar.gz TimtheTyrant@login05.osgconnect.net:~
+tar czf af2d.tar.gz af2d
+scp af2d.tar.gz TimtheTyrant@login05.osgconnect.net:~
 
 <!-- unpack  -->
-tar -xzf worker-transfer.tar.gz
+tar -xzf af2d.tar.gz
+cp worker_env_tt.tar.gz af2d/worker_env.tar.gz
+mkdir runs
+./gen_run_emsd.sh
+echo '480 1e-05 0 0' > run_emsd_test.dat
+
 
 <!-- copy file from the open science grid using scp-->
 $ scp TimtheTyrant@login05.osgconnect.net:worker/worker_env.tar.gz .
