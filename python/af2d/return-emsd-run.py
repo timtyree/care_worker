@@ -11,8 +11,8 @@ import random
 import os,sys
 
 def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
-	T_min=1000#ms - the minimum lifetime for a trajectory to be considered in the$
-	# T_min=100#COMMENT_HERE
+	T_min=500#ms - the minimum lifetime for a trajectory to be considered in the$
+	# T_min=10#COMMENT_HERE
 	omit_time=150#ms
 	# omit_time=0#COMMENT_HERE
 	worker_dir=os.getcwd()
@@ -20,22 +20,23 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 	if mode=='FK':
 		V_threshold=0.4
 		dt=0.025
+		K_o=None
 	else:
 		V_threshold=-50
 		dt=0.1
-		# K_o=7.#5.4 higher K_o should give shorter APD#
+		K_o=3.8#TODO: expose this to the top level. K_o=7.#5.4 higher K_o should give shorter APD#  hmm... lower K_o gave longer lasting spiral tips.
 	tmax_sec=30.
-	# tmax_sec=.15 #max time to integratein seconds#COMMENT_HERE
+	# tmax_sec=.5 #max time to integratein seconds#COMMENT_HERE
 	tmax=tmax_sec * 10**3
 	dsdpixel=0.025#cm/pixel  # area=width*height*dsdpixel**2
-	DT = 0.5   #ms between spiral tip frames
+	DT = .5   #ms between spiral tip frames
 	#NOTE: assert ( save_every_n_frames*dt==DT to floating point precision)
 	DS=dsdpixel
 	save_every_n_frames=int(DT/dt)
 	tmin=100# milliseconds
 	mem=0;#memory for tracking
 	sr=width*2#search range for tracking
-	round_t_to_n_digits=3
+	round_t_to_n_digits=0
 	tmin_early_stopping=100
 	jump_thresh=30.
 	################################################################
@@ -43,11 +44,7 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 	################################################################
 	txt= get_txt(txt_id1,txt_id2,width,height,worker_dir,mode=mode)
 	#delete the mother initial condition (as she is >200MB)
-	try:
-		os.remove(os.path.join('ic','ic1800x1800.npz'))#(NEVERMIND CAUSED BUG)UNCOMMENT_HERE
-	except Exception as e:
-		print('removing ic/ic1800x1800.npz did not work')
-		print(e)
+	# os.remove(os.path.join('ic','ic1800x1800.npz'))#(NEVERMIND CAUSED BUG)COMMENT_HERE
 	df=return_tips_from_txt(
 		txt=txt,
 		h=dt,
@@ -55,7 +52,7 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 		V_threshold=V_threshold,
 		dsdpixel=dsdpixel,diffCoef=diffCoef,
 		tmin_early_stopping=tmin_early_stopping,
-		save_every_n_frames=save_every_n_frames,mode=mode)
+		save_every_n_frames=save_every_n_frames,mode=mode,K_o=K_o)
 	del txt
 
 	#drop columns that won't be used
@@ -124,6 +121,6 @@ if __name__=="__main__":
 		diffCoef   = float(sys.argv[2].split(',')[0])
 		txt_id1    = int(sys.argv[3].split(',')[0])
 		txt_id2    = int(float(sys.argv[4].split(',')[0]))
-		# #wait a randomly selected amount of time (10-200 seconds
-		sleep(randint(10,200))#UNCOMMENT_HERE
+		# #wait a randomly selected amount of time (10-100) seconds
+		sleep(randint(100,1000))#UNCOMMENT_HERE
 		run_main(L, diffCoef, txt_id1, txt_id2)
