@@ -130,11 +130,17 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK',**kwargs):
 	# 	os.system('gdown https://drive.google.com/uc?id=12dLQ_YFwSAvuuZc1lhNsKPcv4QXZB86u -O ic/ic1800x1800.npz')#at time, 1210
 	# if txt_id==3:
 	# 	# run_downloader(gid='14SipoA-gemvfyuA5v9tAUQRP3Firmu8G')
-	os.chdir(worker_dir)
-	txt=load_buffer('ic/ic1800x1800.txt')#[0]#,allow_pickle=True)
-	if rm_father_ic:
-		os.remove('ic/ic1800x1800.txt')
-	# txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
+	if mode=='FK':
+		os.chdir(worker_dir)
+		txt=load_buffer('ic/ic1800x1800.txt')#[0]#,allow_pickle=True)
+		if rm_father_ic:
+			os.remove('ic/ic1800x1800.txt')
+		# txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
+	else:
+		os.chdir(worker_dir)
+		txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
+		if rm_father_ic:
+			os.remove('ic/ic1800x1800.npz')
 	return txt
 
 def get_txt_lst(txt_id1,width,height,worker_dir,**kwargs):
