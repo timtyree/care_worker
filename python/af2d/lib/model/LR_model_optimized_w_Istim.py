@@ -10,14 +10,14 @@ import numpy as np, pandas as pd
 import os
 from math import log
 
-def get_one_step_map(nb_dir,dt,dsdpixel,width,height,**kwargs):
+def get_one_step_map(nb_dir,dt,dsdpixel,width,height,diffCoef,K_o,**kwargs):
 	'''Example Usage:
 	dt, one_step_map= get_one_step_map(nb_dir,dt,dsdpixel,width,height,**kwargs):
 '''
 	#make null stimulus
 	ds=dsdpixel*width
 	# txt_Istim_none=np.zeros(shape=(width,height,1), dtype=np.float64, order='C')
-	dt, kernelA, kernelB=get_one_step_explicit_synchronous_splitting_w_Istim_kernel(nb_dir,dt,width,height,ds)
+	dt, kernelA, kernelB=get_one_step_explicit_synchronous_splitting_w_Istim_kernel(nb_dir,dt,width,height,ds,diffCoef=diffCoef,K_o=K_o)
 
 	#get one step map
 	# txt_Istim=txt_Istim_none.copy()
@@ -59,14 +59,14 @@ def get_comp_dVcdt(width,height,diffCoef=0.001,ds=5.,Cm=1., **kwargs):
 		return dVcdt_val
 	return comp_dVcdt
 
-def get_one_step_explicit_synchronous_splitting_w_Istim_kernel(nb_dir,dt,width,height,ds,diffCoef=0.001,Cm=1.):
+def get_one_step_explicit_synchronous_splitting_w_Istim_kernel(nb_dir,dt,width,height,ds,diffCoef,K_o,Cm=1.,):
 	'''returns dt, arr39, one_step_explicit_synchronous_splitting_w_Istim
 	precomputes lookup table, arr39 and returns a jit compiling one_step method
 	Example Usage:
 	dt, kernelA, kernelB=get_one_step_explicit_synchronous_splitting_w_Istim_kernel(nb_dir,dt,width,height,ds)
 	'''
 	#precompute lookup table
-	arr39=get_arr39(dt,nb_dir)
+	arr39=get_arr39(dt,nb_dir,diffCoef,K_o=K_o)
 	v_values=arr39[:,0]
 	v0=np.min(v_values)
 	dv=np.around(np.mean(np.diff(v_values)),1)
@@ -258,7 +258,7 @@ def get_one_step_explicit_synchronous_splitting_w_Istim_kernel(nb_dir,dt,width,h
 	kernelB=one_step_explicit_synchronous_splitting_w_Istim_kernelB
 	return dt, kernelA, kernelB
 
-def get_forward_integrate_kernel(nb_dir,dt,width,height,ds,diffCoef=0.001,Cm=1.):
+def get_forward_integrate_kernel(nb_dir,dt,width,height,ds,diffCoef,Cm=1.):
 	dt, kernelA, kernelB = get_one_step_explicit_synchronous_splitting_w_Istim_kernel(nb_dir,dt,width,height,ds,diffCoef=diffCoef,Cm=Cm)
 	# @cuda.jit('void(float64[:,:,:], float64[:,:], int32)')
 	@njit('void(float64[:,:,:], float64[:,:], int32)')
@@ -269,11 +269,11 @@ def get_forward_integrate_kernel(nb_dir,dt,width,height,ds,diffCoef=0.001,Cm=1.)
 
 	return forward_integrate_kernel
 
-def get_arr39(dt,nb_dir):
+def get_arr39(dt,nb_dir,K_o):
 	cwd=os.getcwd()
 	#generate lookup tables for timestep
 	os.chdir(os.path.join(nb_dir,'lib/model'))
-	cmd=f"python3 gener_table.py {dt}"
+	cmd=f"python3 gener_table.py {dt} {K_o}"
 	os.system(cmd)
 	#load lookup table for constant timestep, dt.
 	os.chdir(os.path.join(nb_dir,'lib/model','lookup_tables'))

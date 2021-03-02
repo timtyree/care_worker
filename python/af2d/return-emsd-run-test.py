@@ -20,10 +20,11 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 	if mode=='FK':
 		V_threshold=0.4
 		dt=0.025
+		K_o=None
 	else:
 		V_threshold=-50
 		dt=0.1
-		# K_o=7.#5.4 higher K_o should give shorter APD#
+		K_o=3.8#TODO: expose this to the top level. K_o=7.#5.4 higher K_o should give shorter APD#  hmm... lower K_o gave longer lasting spiral tips.
 	tmax_sec=30.
 	tmax_sec=.5 #max time to integratein seconds#COMMENT_HERE
 	tmax=tmax_sec * 10**3
@@ -51,7 +52,7 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 		V_threshold=V_threshold,
 		dsdpixel=dsdpixel,diffCoef=diffCoef,
 		tmin_early_stopping=tmin_early_stopping,
-		save_every_n_frames=save_every_n_frames,mode=mode)
+		save_every_n_frames=save_every_n_frames,mode=mode,K_o=K_o)
 	del txt
 
 	#drop columns that won't be used
@@ -121,5 +122,5 @@ if __name__=="__main__":
 		txt_id1    = int(sys.argv[3].split(',')[0])
 		txt_id2    = int(float(sys.argv[4].split(',')[0]))
 		# #wait a randomly selected amount of time (10-100) seconds
-		# sleep(randint(10,100))#UNCOMMENT_HERE
+		# sleep(randint(100,1000))#UNCOMMENT_HERE
 		run_main(L, diffCoef, txt_id1, txt_id2)

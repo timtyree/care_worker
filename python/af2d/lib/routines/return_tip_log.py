@@ -29,7 +29,7 @@ from ..model.LR_model_optimized_w_Istim import *
 import time, os, sys, re
 
 def return_tips_from_txt(txt, h, tmax, V_threshold,dsdpixel,
-	tmin_early_stopping, save_every_n_frames, mode, diffCoef=0.0005,**kwargs):
+	tmin_early_stopping, save_every_n_frames, mode, diffCoef=0.0005,K_o=None,**kwargs):
 	'''returns df
 	generates a log of tip locations on 2D grid with periodic boundary conditions.
 	default key word arguments are returned by lib.routines.kwargs.get_kwargs(initial_condition_dir).'''
@@ -62,7 +62,8 @@ def return_tips_from_txt(txt, h, tmax, V_threshold,dsdpixel,
 		    time_step(txt, h, zero_txt)
 		    txt[...,0]-=h*txt_Istim/Cm
 	else:#else use the LR model
-		dt, one_step_map = get_one_step_map(nb_dir,dt,dsdpixel,width,height,**kwargs)
+		from ..model.LR_model_optimized_w_Istim import get_one_step_map
+		dt, one_step_map = get_one_step_map(nb_dir,dt,dsdpixel,width,height,diffCoef=diffCoef,K_o=K_o,**kwargs)
 	txt_Istim_none=np.zeros(shape=(width,height), dtype=np.float64, order='C')
 	# kwargs.update({'width':width,'height':height})
 

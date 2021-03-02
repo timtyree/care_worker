@@ -285,12 +285,13 @@ def xt(v,rtoverf,xk0,backcon=1.):
 if __name__ == '__main__':
     import sys,os
     save_deserialized=True
+    if len(sys.argv[1:])<2:
+        raise(Exception("Error: too few float arguments given! Both dt K_o given?"))
     #suppose float arguments are a list of time step sizes
-    dt_lst = [float(x) for x in sys.argv[1:]]
-    if len(dt_lst)==0:
-        raise(Exception("Error: zero float arguments given"))
+    dt = float(sys.argv[1])
+    K_o = float(sys.argv[2])
     for dt in dt_lst:
-        retval = program_br(dt=dt)
+        retval = program_br(dt=dt,K_o=K_o)
         #save serialized results for timestep dt
         if not os.path.exists('lookup_tables'):
             os.mkdir('lookup_tables')
@@ -308,18 +309,49 @@ if __name__ == '__main__':
             #save deserialized results for timestep dt
             arr10,arr11,arr12,arr13,arr39=retval
             fmt='%12.6f'#'%.18e'
-            # np.savetxt(fname=save_fn.replace('.npz','_arr10.csv'),
-            #                     X=arr10.T,fmt=fmt,delimiter=',')
-            # np.savetxt(fname=save_fn.replace('.npz','_arr11.csv'),
-            #                     X=arr11.T,fmt=fmt,delimiter=',')
-            # np.savetxt(fname=save_fn.replace('.npz','_arr12.csv'),
-            #                     X=arr12.T,fmt=fmt,delimiter=',')
-            # np.savetxt(fname=save_fn.replace('.npz','_arr13.csv'),
-                                # X=arr13.T,fmt=fmt,delimiter=',')
             np.savetxt(fname=save_fn.replace('.npz','_arr39.csv'),
                                 X=arr39.T,fmt=fmt,delimiter=',')
-            # print(arr10.shape)
-            # print(arr11.shape)
-            # print(arr12.shape)
-            # print(arr13.shape)
-            # print(arr39.shape)
+
+
+# #command line interface
+# if __name__ == '__main__':
+#     import sys,os
+#     save_deserialized=True
+#     #suppose float arguments are a list of time step sizes
+#     dt_lst = [float(x) for x in sys.argv[1:]]
+#     if len(dt_lst)==0:
+#         raise(Exception("Error: zero float arguments given"))
+#     for dt in dt_lst:
+#         retval = program_br(dt=dt)
+#         #save serialized results for timestep dt
+#         if not os.path.exists('lookup_tables'):
+#             os.mkdir('lookup_tables')
+#         save_fn=f"lookup_tables/luo_rudy_dt_{dt}.npz"
+#         #save compressed arrays with self documenting keywords
+#         # np.savez_compressed(save_fn,*retval,
+#         #     kwds=[
+#         #         'arr10_v_xinfh_xttab',
+#         #         'arr11_v_e1_em_ef',
+#         #         'arr12_v_ed_ej_eh',
+#         #         'arr13_v_xtaud_xtauf',
+#         #         'arr39_v_xinf1_xtau1_xinfm_xtaum_xinfh_xtauh_xinfj_xtauj_xinfd_xtaud_xinff_xtauf_xttab_x1_e1_em_eh_ej_ed_ef'
+#         #         ])
+#         if save_deserialized:
+#             #save deserialized results for timestep dt
+#             arr10,arr11,arr12,arr13,arr39=retval
+#             fmt='%12.6f'#'%.18e'
+#             # np.savetxt(fname=save_fn.replace('.npz','_arr10.csv'),
+#             #                     X=arr10.T,fmt=fmt,delimiter=',')
+#             # np.savetxt(fname=save_fn.replace('.npz','_arr11.csv'),
+#             #                     X=arr11.T,fmt=fmt,delimiter=',')
+#             # np.savetxt(fname=save_fn.replace('.npz','_arr12.csv'),
+#             #                     X=arr12.T,fmt=fmt,delimiter=',')
+#             # np.savetxt(fname=save_fn.replace('.npz','_arr13.csv'),
+#                                 # X=arr13.T,fmt=fmt,delimiter=',')
+#             np.savetxt(fname=save_fn.replace('.npz','_arr39.csv'),
+#                                 X=arr39.T,fmt=fmt,delimiter=',')
+#             # print(arr10.shape)
+#             # print(arr11.shape)
+#             # print(arr12.shape)
+#             # print(arr13.shape)
+#             # print(arr39.shape)
