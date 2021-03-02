@@ -113,11 +113,11 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK',**kwargs):
 	if mode=='FK':
 		print('downloading FK model...')
 		gid=get_gid_fk(txt_id)
-		run_downloader(gid=gid)
+		run_downloader(gid=gid,txt_ic_fn='ic/ic1800x1800.txt')
 	else:
 		print('downloading LR model...')
 		gid=get_gid(txt_id)
-		cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.npz'
+		cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.txt'
 		os.system(cmd)
 	#at time, 1210
 	# if txt_id==0:
@@ -131,17 +131,17 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK',**kwargs):
 	# 	os.system('gdown https://drive.google.com/uc?id=12dLQ_YFwSAvuuZc1lhNsKPcv4QXZB86u -O ic/ic1800x1800.npz')#at time, 1210
 	# if txt_id==3:
 	# 	# run_downloader(gid='14SipoA-gemvfyuA5v9tAUQRP3Firmu8G')
-	if mode=='FK':
-		os.chdir(worker_dir)
-		txt=load_buffer('ic/ic1800x1800.txt')#[0]#,allow_pickle=True)
-		if rm_father_ic:
-			os.remove('ic/ic1800x1800.txt')
-		# txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
-	else:
-		os.chdir(worker_dir)
-		txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
-		if rm_father_ic:
-			os.remove('ic/ic1800x1800.npz')
+	# if mode=='FK':
+	os.chdir(worker_dir)
+	txt=load_buffer('ic/ic1800x1800.txt')#[0]#,allow_pickle=True)
+	if rm_father_ic:
+		os.remove('ic/ic1800x1800.txt')
+	# txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
+	# else:
+	# 	os.chdir(worker_dir)
+	# 	txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
+	# 	if rm_father_ic:
+	# 		os.remove('ic/ic1800x1800.npz')
 	return txt
 
 def get_txt_lst(txt_id1,width,height,worker_dir,**kwargs):
