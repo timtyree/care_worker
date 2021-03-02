@@ -113,12 +113,14 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK',**kwargs):
 	if mode=='FK':
 		print('downloading FK model...')
 		gid=get_gid_fk(txt_id)
-		run_downloader(gid=gid,txt_ic_fn='ic/ic1800x1800.txt')
+		# run_downloader(gid=gid,txt_ic_fn='ic/ic1800x1800.txt')
 	else:
 		print('downloading LR model...')
 		gid=get_gid(txt_id)
-		cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.txt'
-		os.system(cmd)
+		# cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.txt'
+		# os.system(cmd)
+	run_downloader(gid=gid,txt_ic_fn='ic/ic1800x1800.txt')
+
 	#at time, 1210
 	# if txt_id==0:
 	# 	# run_downloader(gid='1OYtQNnp5KnGfKMkskk7GeDQSCe3Mo7Gu')
@@ -132,7 +134,7 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK',**kwargs):
 	# if txt_id==3:
 	# 	# run_downloader(gid='14SipoA-gemvfyuA5v9tAUQRP3Firmu8G')
 	# if mode=='FK':
-	os.chdir(worker_dir)
+	# os.chdir(worker_dir)
 	txt=load_buffer('ic/ic1800x1800.txt')#[0]#,allow_pickle=True)
 	if rm_father_ic:
 		os.remove('ic/ic1800x1800.txt')
