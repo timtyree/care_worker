@@ -10,7 +10,7 @@ from lib.routines.return_longest_traj import return_longest_trajectories
 import random
 import os,sys
 
-def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
+def run_main(L, diffCoef, txt_id1,txt_id2, mode='LR'):
 	T_min=500#ms - the minimum lifetime for a trajectory to be considered in the$
 	T_min=10#COMMENT_HERE
 	omit_time=150#ms
