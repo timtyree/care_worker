@@ -113,12 +113,13 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK',**kwargs):
 	if mode=='FK':
 		print('downloading FK model...')
 		gid=get_gid_fk(txt_id)
+		run_downloader(gid=gid)
 	else:
 		print('downloading LR model...')
 		gid=get_gid(txt_id)
-	run_downloader(gid=gid)
-	# cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.npz'
-	# os.system(cmd)#at time, 1210
+		cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.npz'
+		os.system(cmd)
+	#at time, 1210
 	# if txt_id==0:
 	# 	# run_downloader(gid='1OYtQNnp5KnGfKMkskk7GeDQSCe3Mo7Gu')
 	# 	os.system('gdown https://drive.google.com/uc?id=1OYtQNnp5KnGfKMkskk7GeDQSCe3Mo7Gu -O ic/ic1800x1800.npz')#at time, 1210
