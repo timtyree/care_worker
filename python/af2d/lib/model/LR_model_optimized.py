@@ -43,11 +43,11 @@ def get_comp_dVcdt(width=200,height=200,diffCoef=0.001,ds=5.,Cm=1.):
 	return comp_dVcdt
 
 
-def get_arr39(dt,nb_dir):
+def get_arr39(dt,nb_dir,K_o):
 	cwd=os.getcwd()
 	#generate lookup tables for timestep
 	os.chdir(os.path.join(nb_dir,'lib/model'))
-	cmd=f"python3 gener_table.py {dt}"
+	cmd=f"python3 gener_table.py {dt} {K_o}"
 	os.system(cmd)
 	#load lookup table for constant timestep, dt.
 	os.chdir(os.path.join(nb_dir,'lib/model','lookup_tables'))

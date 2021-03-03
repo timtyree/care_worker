@@ -11,7 +11,7 @@ import random
 import os,sys
 
 def run_main(L, diffCoef, txt_id1,txt_id2, mode='LR'):
-	T_min=500#ms - the minimum lifetime for a trajectory to be considered in the$
+	T_min=700#ms - the minimum lifetime for a trajectory to be considered in the$
 	# T_min=10#COMMENT_HERE
 	omit_time=150#ms
 	# omit_time=0#COMMENT_HERE
