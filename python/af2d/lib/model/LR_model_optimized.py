@@ -41,28 +41,36 @@ def get_comp_dVcdt(width=200,height=200,diffCoef=0.001,ds=5.,Cm=1.):
 		dVcdt_val=np.array([dVltdt,dCa_i_dt],dtype=float64)
 		return dVcdt_val
 	return comp_dVcdt
-
-
+	
 def get_arr39(dt,nb_dir,K_o):
 	cwd=os.getcwd()
 	#generate lookup tables for timestep
 	os.chdir(os.path.join(nb_dir,'lib/model'))
-	cmd=f"python3 gener_table.py {dt} {K_o}"
-	os.system(cmd)
-	#load lookup table for constant timestep, dt.
-	os.chdir(os.path.join(nb_dir,'lib/model','lookup_tables'))
-	# table_fn=f"luo_rudy_dt_{dt}.npz"
-	# table_data=np.load(table_fn)
-	# #convert table_data to a numpy array
-	# kwds=table_data.get('kwds')
-	# cols=kwds[-1].split('_')[1:]
-	# keys=list(table_data.keys())
-	# arr39=table_data[keys[-1]].T
-	table_fn=f"luo_rudy_dt_{dt}_arr39.csv"
-	arr39=pd.read_csv(table_fn,header=None).values
-	#return to original working directory
-	os.chdir(cwd)
-	return arr39
+	from .gener_table import program_br
+	retval = program_br(dt=dt,K_o=K_o)
+	arr10,arr11,arr12,arr13,arr39=retval
+	return arr39.T
+
+# def get_arr39(dt,nb_dir,K_o):
+# 	cwd=os.getcwd()
+# 	#generate lookup tables for timestep
+# 	os.chdir(os.path.join(nb_dir,'lib/model'))
+# 	cmd=f"python3 gener_table.py {dt} {K_o}"
+# 	os.system(cmd)
+# 	#load lookup table for constant timestep, dt.
+# 	os.chdir(os.path.join(nb_dir,'lib/model','lookup_tables'))
+# 	# table_fn=f"luo_rudy_dt_{dt}.npz"
+# 	# table_data=np.load(table_fn)
+# 	# #convert table_data to a numpy array
+# 	# kwds=table_data.get('kwds')
+# 	# cols=kwds[-1].split('_')[1:]
+# 	# keys=list(table_data.keys())
+# 	# arr39=table_data[keys[-1]].T
+# 	table_fn=f"luo_rudy_dt_{dt}_arr39.csv"
+# 	arr39=pd.read_csv(table_fn,header=None).values
+# 	#return to original working directory
+# 	os.chdir(cwd)
+# 	return arr39
 
 @njit
 def comp_exact_next_gating_var(inCgate,outCgate,arr_interp):

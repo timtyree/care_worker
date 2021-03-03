@@ -277,7 +277,7 @@ def get_arr39(dt,nb_dir,K_o):
 	from .gener_table import program_br
 	retval = program_br(dt=dt,K_o=K_o)
 	arr10,arr11,arr12,arr13,arr39=retval
-	return arr39
+	return arr39.T
 
 # fmt='%12.6f'#'%.18e'
 # if not os.path.exists('lookup_tables'):
