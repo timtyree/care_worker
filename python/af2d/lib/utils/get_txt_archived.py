@@ -1,6 +1,6 @@
 import os, numpy as np
 from .chunk_array import chunk_array
-from .gdown import download_file_from_google_drive
+from .mygdown import download_file_from_google_drive
 
 def load_buffer(data_dir,**kwargs):
 	cwd=os.getcwd()
@@ -113,12 +113,17 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK',**kwargs):
 	if mode=='FK':
 		print('downloading FK model...')
 		gid=get_gid_fk(txt_id)
+		run_downloader(gid=gid,txt_ic_fn='ic/ic1800x1800.txt')
 	else:
 		print('downloading LR model...')
 		gid=get_gid(txt_id)
-	run_downloader(gid=gid)
-	# cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.npz'
-	# os.system(cmd)#at time, 1210
+		# cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.txt'
+		# os.system(cmd)
+		# test
+		# gdown https://drive.google.com/uc?id=1h7MahThMtqLtx4QO0GUFNFKUxyBdCT87 -O ic/ic1800x1800.txt
+	run_downloader(gid=gid,txt_ic_fn='ic/ic1800x1800.txt')
+
+	#at time, 1210
 	# if txt_id==0:
 	# 	# run_downloader(gid='1OYtQNnp5KnGfKMkskk7GeDQSCe3Mo7Gu')
 	# 	os.system('gdown https://drive.google.com/uc?id=1OYtQNnp5KnGfKMkskk7GeDQSCe3Mo7Gu -O ic/ic1800x1800.npz')#at time, 1210
@@ -130,11 +135,18 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK',**kwargs):
 	# 	os.system('gdown https://drive.google.com/uc?id=12dLQ_YFwSAvuuZc1lhNsKPcv4QXZB86u -O ic/ic1800x1800.npz')#at time, 1210
 	# if txt_id==3:
 	# 	# run_downloader(gid='14SipoA-gemvfyuA5v9tAUQRP3Firmu8G')
-	os.chdir(worker_dir)
+	# if mode=='FK':
+	# os.chdir(worker_dir)
 	txt=load_buffer('ic/ic1800x1800.txt')#[0]#,allow_pickle=True)
+	rm_father_ic=False
 	if rm_father_ic:
 		os.remove('ic/ic1800x1800.txt')
 	# txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
+	# else:
+	# 	os.chdir(worker_dir)
+	# 	txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
+	# 	if rm_father_ic:
+	# 		os.remove('ic/ic1800x1800.npz')
 	return txt
 
 def get_txt_lst(txt_id1,width,height,worker_dir,**kwargs):
@@ -157,6 +169,6 @@ def get_txt(txt_id1,txt_id2,width,height,worker_dir,**kwargs):
 	return txt
 
 if __name__=='__main__':
-	os.get_cwd()
-	for input_fn in sys.argv[1:]:
+	worker_dir=os.get_cwd()
+	for txt_id in sys.argv[1:]:
 		download_txt(txt_id,worker_dir)
