@@ -117,11 +117,11 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK',**kwargs):
 	else:
 		print('downloading LR model...')
 		gid=get_gid(txt_id)
-		cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.txt'
-		os.system(cmd)
+		# cmd=f'gdown https://drive.google.com/uc?id={gid} -O ic/ic1800x1800.txt'
+		# os.system(cmd)
 		# test
 		# gdown https://drive.google.com/uc?id=1h7MahThMtqLtx4QO0GUFNFKUxyBdCT87 -O ic/ic1800x1800.txt
-	# run_downloader(gid=gid,txt_ic_fn='ic/ic1800x1800.txt')
+	run_downloader(gid=gid,txt_ic_fn='ic/ic1800x1800.txt')
 
 	#at time, 1210
 	# if txt_id==0:
