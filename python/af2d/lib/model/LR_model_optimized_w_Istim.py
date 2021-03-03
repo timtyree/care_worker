@@ -9,6 +9,7 @@ from numba import njit, jit, float64#, prange
 import numpy as np, pandas as pd
 import os
 from math import log
+from .gener_table import program_br
 
 def get_one_step_map(nb_dir,dt,dsdpixel,width,height,diffCoef,K_o,**kwargs):
 	'''Example Usage:
@@ -276,30 +277,32 @@ def get_arr39(dt,nb_dir,K_o):
 	from .gener_table import program_br
 	retval = program_br(dt=dt,K_o=K_o)
 	arr10,arr11,arr12,arr13,arr39=retval
-	# fmt='%12.6f'#'%.18e'
-	# if not os.path.exists('lookup_tables'):
-	# 	os.mkdir('lookup_tables')
-	# save_fn=f"lookup_tables/luo_rudy_dt_{dt}.npz"
-	# np.savetxt(fname=save_fn.replace('.npz','_arr39.csv'),
-	# 					X=arr39.T,fmt=fmt,delimiter=',')
-
-	# # cmd=f"python3 gener_table.py {dt} {K_o}"
-	# # os.system(cmd)
-	# #load lookup table for constant timestep, dt.
-	# # os.chdir(os.path.join(nb_dir,'lib/model','lookup_tables'))
-	# # table_fn=f"luo_rudy_dt_{dt}.npz"
-	# # table_data=np.load(table_fn)
-	# # #convert table_data to a numpy array
-	# # kwds=table_data.get('kwds')
-	# # cols=kwds[-1].split('_')[1:]
-	# # keys=list(table_data.keys())
-	# # arr39=table_data[keys[-1]].T
-	# table_fn=f"luo_rudy_dt_{dt}_arr39.csv"
-	# arr39=pd.read_csv(table_fn,header=None).values
-
-	#return to original working directory
-	# os.chdir(cwd)
 	return arr39
+
+# fmt='%12.6f'#'%.18e'
+# if not os.path.exists('lookup_tables'):
+# 	os.mkdir('lookup_tables')
+# save_fn=f"lookup_tables/luo_rudy_dt_{dt}.npz"
+# np.savetxt(fname=save_fn.replace('.npz','_arr39.csv'),
+# 					X=arr39.T,fmt=fmt,delimiter=',')
+#
+# # cmd=f"python3 gener_table.py {dt} {K_o}"
+# # os.system(cmd)
+# #load lookup table for constant timestep, dt.
+# # os.chdir(os.path.join(nb_dir,'lib/model','lookup_tables'))
+# # table_fn=f"luo_rudy_dt_{dt}.npz"
+# # table_data=np.load(table_fn)
+# # #convert table_data to a numpy array
+# # kwds=table_data.get('kwds')
+# # cols=kwds[-1].split('_')[1:]
+# # keys=list(table_data.keys())
+# # arr39=table_data[keys[-1]].T
+# table_fn=f"luo_rudy_dt_{dt}_arr39.csv"
+# arr39=pd.read_csv(table_fn,header=None).values
+#
+# return to original working directory
+# os.chdir(cwd)
+# return arr39
 
 # def get_arr39(dt,nb_dir):
 # 	cwd=os.getcwd()

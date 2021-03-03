@@ -288,7 +288,7 @@ if __name__ == '__main__':
     if len(sys.argv[1:])<2:
         raise(Exception("Error: too few float arguments given! Both dt K_o given?"))
     #suppose float arguments are a list of time step sizes
-    dt = float(sys.argv[1])
+    dt_lst = [float(sys.argv[1])]
     K_o = float(sys.argv[2])
     for dt in dt_lst:
         retval = program_br(dt=dt,K_o=K_o)

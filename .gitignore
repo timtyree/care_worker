@@ -24,3 +24,4 @@ python/-f
 *.d
 *.pyc
 *.pyc
+python/segmentation-fault.txt
