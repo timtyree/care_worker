@@ -1,6 +1,6 @@
 import os, numpy as np
 from .chunk_array import chunk_array
-from .gdown import download_file_from_google_drive
+from .mygdown import download_file_from_google_drive
 
 def load_buffer(data_dir,**kwargs):
 	cwd=os.getcwd()
