@@ -138,6 +138,7 @@ def download_txt(txt_id,worker_dir,rm_father_ic=True,mode='FK',**kwargs):
 	# if mode=='FK':
 	# os.chdir(worker_dir)
 	txt=load_buffer('ic/ic1800x1800.txt')#[0]#,allow_pickle=True)
+	rm_father_ic=False
 	if rm_father_ic:
 		os.remove('ic/ic1800x1800.txt')
 	# txt=load_buffer('ic/ic1800x1800.npz')[0]#,allow_pickle=True)
