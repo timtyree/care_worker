@@ -66,7 +66,7 @@ def get_one_step_explicit_synchronous_splitting_w_Istim_kernel(nb_dir,dt,width,h
 	dt, kernelA, kernelB=get_one_step_explicit_synchronous_splitting_w_Istim_kernel(nb_dir,dt,width,height,ds)
 	'''
 	#precompute lookup table
-	arr39=get_arr39(dt,nb_dir,diffCoef,K_o=K_o)
+	arr39=get_arr39(dt=dt,nb_dir=nb_dir,K_o=K_o)
 	v_values=arr39[:,0]
 	v0=np.min(v_values)
 	dv=np.around(np.mean(np.diff(v_values)),1)
