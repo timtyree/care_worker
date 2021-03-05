@@ -10,8 +10,8 @@ from lib.routines.return_longest_traj import return_longest_trajectories
 import random
 import os,sys
 
-def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
-	T_min=1000#ms - the minimum lifetime for a trajectory to be considered in the$
+def run_main(L, diffCoef, txt_id1,txt_id2, mode='LR'):
+	T_min=700#ms - the minimum lifetime for a trajectory to be considered in the$
 	# T_min=10#COMMENT_HERE
 	omit_time=150#ms
 	# omit_time=0#COMMENT_HERE
@@ -44,7 +44,7 @@ def run_main(L, diffCoef, txt_id1,txt_id2, mode='FK'):
 	################################################################
 	txt= get_txt(txt_id1,txt_id2,width,height,worker_dir,mode=mode)
 	#delete the mother initial condition (as she is >200MB)
-	# os.remove(os.path.join('ic','ic1800x1800.npz'))#(NEVERMIND CAUSED BUG)COMMENT_HERE
+	# os.remove(os.path.join('ic','ic1800x1800.npz'))#(NEVERMIND CAUSED BUG)UNCOMMENT_HERE
 	df=return_tips_from_txt(
 		txt=txt,
 		h=dt,
@@ -122,5 +122,5 @@ if __name__=="__main__":
 		txt_id1    = int(sys.argv[3].split(',')[0])
 		txt_id2    = int(float(sys.argv[4].split(',')[0]))
 		# #wait a randomly selected amount of time (10-100) seconds
-		sleep(randint(100,1000))#UNCOMMENT_HERE
+		sleep(randint(1,10000))#UNCOMMENT_HERE
 		run_main(L, diffCoef, txt_id1, txt_id2)
